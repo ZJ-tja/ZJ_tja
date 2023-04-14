@@ -14,6 +14,7 @@ server.register(fastify_socket_io_1.default, {
         origin: "https://zj_tja.onrender.com/"
     }
 });
+gi;
 server.setNotFoundHandler((req, res) => {
     res.statusCode = 404;
     res.type('text/html').send('Not Found! ' + req.url);

@@ -11,7 +11,8 @@ server.register( fastifyIO, {
 		origin: "https://zj_tja.onrender.com/"
 	}
 } );
-gi
+
+
 server.setNotFoundHandler( ( req: FastifyRequest, res: FastifyReply ) => {
 	res.statusCode = 404;
 	res.type( 'text/html' ).send( 'Not Found! ' + req.url );
