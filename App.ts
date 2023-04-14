@@ -3,15 +3,13 @@ import fastifyIO from "fastify-socket.io";
 import Tree from "./Module/Tree";
 
 const server = fastify();
-
 server.register( fastifyIO, {
 	transports: [ 'websocket' ],
 	serveClient: false,
 	cors: {
-		origin: "https://zj_tja.onrender.com/"
+		origin: "https://zj-tja.onrender.com/"
 	}
 } );
-
 
 server.setNotFoundHandler( ( req: FastifyRequest, res: FastifyReply ) => {
 	res.statusCode = 404;
