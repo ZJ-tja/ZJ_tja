@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+}
+
+.template {
+  --harmony: #F5F5DC;
+  --elegant: #808080;
+  --relax: #87CEFA;
+  --positive: #FFFFE0;
+  --calm: #87CEEB;
+  --bg: #F5F5F5;
+  --shade: #F5F5DC;
+  --calm-shade: #ADD8E6;
+  --soft-shade: #90EE90;
+  --bright-shade: #FFFFE0;
+}
+
+.palette1 {
+  --neutral: #F5F5DC;
+  --bright: #FFFFFF;
+  --dark: #808080;
+  --relax: #87CEFA;
+  --positive: #FFFFE0;
+  --calm: #87CEEB;
+}
+
+body > .template {
+  display: grid;
+  grid-template-rows: min-content min-content auto min-content;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-weight: 600;
+  font-family: Source Sans Pro, Helvetica Neue, sans-serif;
+  background-color: var(--neutral);
+  color: var(--dark);
+  font-size: 15px;
+}
+body > .template > header {
+  background-color: var(--bright);
+}
+body > .template > nav {
+  background-color: var(--positive);
+}
+body > .template > main {
+  overflow: auto;
+}
+body > .template > footer {
+  background-color: var(--bright);
+}
+body > .template > * {
+  padding: 0.75rem 1.5rem;
+  box-sizing: border-box;
+}
+
+img {
+  display: inline-block;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--relax);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--calm);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  opacity: 0.75;
+}
+
+.contact [href^="tel:"]::before {
+  display: inline-block;
+  content: attr(href);
+}
+.contact [href^="mailto:"]::before {
+  display: inline-block;
+  content: attr(href);
+}
