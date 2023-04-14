@@ -23,19 +23,28 @@
 <body>
 	<div class="template">
 		<header>
-			<div class="brand">
-				<a href="/">
+			<span>
+				<a class="brand" href="/">
 					<img src="/favicon-32x32.png" width="32" height="32" alt="ZJ">
 					<span>_tja</span>
 				</a>
-			</div>
-			<div class="contact">
-				<a href="tel:+48579318667">+48579318667</a>
-				<a href="mailto:ZJ_tja@proton.me">ZJ_tja@proton.me</a>
-			</div>
+				<span class="contact">
+					<a href="tel:+48579318667">+48579318667</a>
+					<a href="mailto:ZJ_tja@proton.me">ZJ_tja@proton.me</a>
+				</span>
+			</span>
+			<span class="context-burger">
+				<input id="ContextBurger" onclick="Nav( 'NavContext', this.checked )" type="checkbox" aria-label="menu">
+				<label for="ContextBurger">
+					<div></div>
+					<div></div>
+					<div></div>
+					<span>Menu</span>
+				</label>
+			</span>
 		</header>
 		<nav>
-			<menu type="context">
+			<menu id="NavContext" type="context">
 				<li class="active"><a href="/">Start</a></li>
 				<li class="active"><a href="/Shop/">Sklep</a></li>
 				<li class="active"><a href="/Projects/">Projekty</a></li>
@@ -43,10 +52,7 @@
 				<li class="active"><a href="/Account/">Konto</a></li>
 			</menu>
 		</nav>
-		<main>
-			<div class="content">
-				<h1>ZJ_tja</h1>
-			</div>
+		<main id="Context">
 		</main>
 		<footer>
 			<span id="CurrentYear">2023</span>

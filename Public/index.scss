@@ -62,13 +62,14 @@ img {
 	opacity: .75;
 }
 .contact {
-	[href^="tel:"]::before {
+	[href^="tel:"]::before, [href^="mailto:"]::before {
 		display: inline-block;
+		text-decoration: none;
+	}
+	[href^="tel:"]::before {
 		content: " ";
 	}
 	[href^="mailto:"]::before {
-		display: inline-block;
 		content: " ";
-
 	}
 }

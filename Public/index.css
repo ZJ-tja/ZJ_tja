@@ -64,11 +64,13 @@ img {
   opacity: 0.75;
 }
 
-.contact [href^="tel:"]::before {
+.contact [href^="tel:"]::before, .contact [href^="mailto:"]::before {
   display: inline-block;
+  text-decoration: none;
+}
+.contact [href^="tel:"]::before {
   content: " ";
 }
 .contact [href^="mailto:"]::before {
-  display: inline-block;
   content: " ";
 }
