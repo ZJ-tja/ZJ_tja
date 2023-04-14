@@ -35,8 +35,8 @@ body > .template {
 	> footer {
 		background-color: var(--bright);
 	}
-	> * {
-		padding: .75rem 1.5rem;
+	> * > * {
+		padding: 0 1.5rem;
 		box-sizing: border-box;
 	}
 }
@@ -64,11 +64,11 @@ img {
 .contact {
 	[href^="tel:"]::before {
 		display: inline-block;
-		content: attr(href);
+		content: " ";
 	}
 	[href^="mailto:"]::before {
 		display: inline-block;
-		content: attr(href);
+		content: " ";
 
 	}
 }
