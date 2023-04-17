@@ -48,5 +48,3 @@ const port = ( process.env.PORT || 10000 ) as number;
 server.listen( { port: port }, () => {
 	console.log( "Server listening on port " + port );
 } );
-
-console.log("test")

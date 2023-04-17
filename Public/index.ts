@@ -1,6 +1,7 @@
 var globals: { [ key: string ]: any } = window;//TS-debug
 const IO: any = globals[ "io" ]( "", { transports: [ 'websocket' ] } );
 
+
 function Nav( id = "NavContext", open =false ) {
 	let eNav;
 	if ( ( eNav = document.getElementById( id ) ) )
