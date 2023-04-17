@@ -28,6 +28,13 @@ body > .template > header {
 }
 body > .template > nav {
   background-color: var(--positive);
+  overflow-y: scroll;
+  max-height: 0px;
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1), overflow 0.5s cubic-bezier(0, 1, 0, 1);
+}
+body > .template > nav[open] {
+  max-height: 50vh !important;
+  transition: max-height 1s ease-in-out;
 }
 body > .template > main {
   overflow: auto;
@@ -35,8 +42,8 @@ body > .template > main {
 body > .template > footer {
   background-color: var(--bright);
 }
-body > .template > * > * {
-  padding: 0 1.5rem;
+body > .template > header > *, body > .template > nav > *, body > .template > main > *, body > .template > footer > * {
+  padding: 0 1rem;
   box-sizing: border-box;
 }
 

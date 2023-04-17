@@ -39,7 +39,7 @@ server.get( "/*", {
 
 server.ready().then( () => {
 	server.io.on( "connection", ( client ) => {
-		console.log( "Connected" )
+		console.log( "Connected" + client.id );
 
 	} );
 } );

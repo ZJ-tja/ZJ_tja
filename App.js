@@ -39,7 +39,7 @@ server.get("/*", {
 }, handler);
 server.ready().then(() => {
     server.io.on("connection", (client) => {
-        console.log("Connected");
+        console.log("Connected" + client.id);
     });
 });
 const port = (process.env.PORT || 10000);
