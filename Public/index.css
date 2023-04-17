@@ -48,7 +48,7 @@ body {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  font-size: 1.5em;
+  font-size: 1.25em;
   font-weight: 600;
   text-decoration: none;
 }
@@ -70,6 +70,9 @@ header > .burger {
 
 .burger {
   position: relative;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
 }
 .burger > input {
   position: absolute;
