@@ -25,6 +25,7 @@ body {
 	> header {
 		display: flex;
 		align-items: center;
+		gap: .25em;
 		background-color: var(--bright);
 	}
 	> nav {
@@ -55,6 +56,7 @@ body {
 	text-decoration: none;
 }
 .contact {
+	display: inline-block;
 	[href^="tel:"]::before, [href^="mailto:"]::before {
 		display: inline-block;
 		text-decoration: none;
@@ -87,7 +89,7 @@ header > .burger {
 	> label > div {
 		width: 100%;
 		height: .25em;
-		background-color: var(--contrast);
+		background-color: var(--dark);
 		border-radius: .25em;
 		transition: transform .3s ease-in-out, opacity .3s ease-in-out;
 
@@ -108,11 +110,12 @@ header > .burger {
 		bottom: 0;
 		font-size: .75em;
 		font-weight: 400;
-		color: var(--contrast);
+		color: var(--dark);
 		text-transform: uppercase;
 		user-select: none;
 	}
 }
+
 img {
 	display: inline-block;
 }

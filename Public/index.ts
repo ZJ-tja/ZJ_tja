@@ -5,7 +5,7 @@ const IO: any = globals[ "io" ]( "", { transports: [ 'websocket' ] } );
 function Nav( open = false, type ="context" ) {
 	let eNavs = document.getElementsByTagName( "nav" );
 	for ( const eNav of eNavs ) {
-		if ( eNav.querySelector( `type="${ type }"` ) ) {
+		if ( eNav.querySelector( `[type="${ type }"]` ) ) {
 			eNav.className = open ? "open" : "";
 			break;
 		}
