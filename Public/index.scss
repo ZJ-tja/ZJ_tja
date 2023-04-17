@@ -9,7 +9,7 @@ body {
 	--positive: #FFFFE0;
 	--calm: #87CEEB;
 }
-body > .template {
+.template {
 	display: grid;
 	grid-template-rows: min-content min-content auto min-content;
 	width: 100vw;
@@ -29,6 +29,13 @@ body > .template {
 	}
 	> nav {
 		background-color: var(--positive);
+		max-height: 0px;
+		overflow-y: scroll;
+		transition: all .5s cubic-bezier(0, 1, 0, 1), overflow .5s cubic-bezier(0, 1, 0, 1);
+		&.open {
+			max-height: 50vh !important;
+			transition: max-height 1s ease-in-out;
+		}
 	}
 	> main {
 		overflow: auto;

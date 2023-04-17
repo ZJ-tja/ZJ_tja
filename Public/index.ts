@@ -2,10 +2,14 @@ var globals: { [ key: string ]: any } = window;//TS-debug
 const IO: any = globals[ "io" ]( "", { transports: [ 'websocket' ] } );
 
 
-function Nav( id = "NavContext", open =false ) {
-	let eNav;
-	if ( ( eNav = document.getElementById( id ) ) )
-		eNav.className = open ? "open" : "";
+function Nav( open = false, type ="context" ) {
+	let eNavs = document.getElementsByTagName( "nav" );
+	for ( const eNav of eNavs ) {
+		if ( eNav.querySelector( `type="${ type }"` ) ) {
+			eNav.className = open ? "open" : "";
+			break;
+		}
+	}
 }
 
 (function(){

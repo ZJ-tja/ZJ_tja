@@ -11,7 +11,7 @@ body {
   --calm: #87CEEB;
 }
 
-body > .template {
+.template {
   display: grid;
   grid-template-rows: min-content min-content auto min-content;
   width: 100vw;
@@ -22,18 +22,25 @@ body > .template {
   font-family: Source Sans Pro, Helvetica Neue, sans-serif;
   font-size: 15px;
 }
-body > .template > header {
+.template > header {
   display: flex;
   align-items: center;
   background-color: var(--bright);
 }
-body > .template > nav {
+.template > nav {
   background-color: var(--positive);
+  max-height: 0px;
+  overflow-y: scroll;
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1), overflow 0.5s cubic-bezier(0, 1, 0, 1);
 }
-body > .template > main {
+.template > nav.open {
+  max-height: 50vh !important;
+  transition: max-height 1s ease-in-out;
+}
+.template > main {
   overflow: auto;
 }
-body > .template > footer {
+.template > footer {
   background-color: var(--bright);
 }
 
