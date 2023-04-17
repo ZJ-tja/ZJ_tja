@@ -16,14 +16,16 @@ body > .template {
 	height: 100vh;
 	overflow: hidden;
 
-	font-weight: 600;
-	font-family: Source Sans Pro, Helvetica Neue, sans-serif;
-
 	background-color: var(--neutral);
 	color: var(--dark);
+
+	font-weight: 600;
+	font-family: Source Sans Pro, Helvetica Neue, sans-serif;
 	font-size: 15px;
 
 	> header {
+		display: flex;
+		justify-content: space-between;
 		background-color: var(--bright);
 	}
 	> nav {
@@ -37,15 +39,19 @@ body > .template {
 	}
 }
 
+.brand {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+
+	font-size: 1.5em;
+	text-decoration: none;
+}
+
 img {
 	display: inline-block;
 }
-.wrap {
-	margin: 0 auto;
-	padding: .5rem;
-	box-sizing: border-box;
-	width: 100%;
-}
+
 .burger {
 	position: relative;
 	> input {

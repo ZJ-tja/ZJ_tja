@@ -17,13 +17,15 @@ body > .template {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  font-weight: 600;
-  font-family: Source Sans Pro, Helvetica Neue, sans-serif;
   background-color: var(--neutral);
   color: var(--dark);
+  font-weight: 600;
+  font-family: Source Sans Pro, Helvetica Neue, sans-serif;
   font-size: 15px;
 }
 body > .template > header {
+  display: flex;
+  justify-content: space-between;
   background-color: var(--bright);
 }
 body > .template > nav {
@@ -36,15 +38,16 @@ body > .template > footer {
   background-color: var(--bright);
 }
 
-img {
-  display: inline-block;
+.brand {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  font-size: 1.5em;
+  text-decoration: none;
 }
 
-.wrap {
-  margin: 0 auto;
-  padding: 0.5rem;
-  box-sizing: border-box;
-  width: 100%;
+img {
+  display: inline-block;
 }
 
 .burger {
