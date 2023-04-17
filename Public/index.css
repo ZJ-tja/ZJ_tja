@@ -19,13 +19,12 @@ body > .template {
   overflow: hidden;
   background-color: var(--neutral);
   color: var(--dark);
-  font-weight: 600;
   font-family: Source Sans Pro, Helvetica Neue, sans-serif;
   font-size: 15px;
 }
 body > .template > header {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   background-color: var(--bright);
 }
 body > .template > nav {
@@ -43,11 +42,23 @@ body > .template > footer {
   flex-wrap: nowrap;
   align-items: center;
   font-size: 1.5em;
+  font-weight: 600;
   text-decoration: none;
 }
 
-img {
+.contact [href^="tel:"]::before, .contact [href^="mailto:"]::before {
   display: inline-block;
+  text-decoration: none;
+}
+.contact [href^="tel:"]::before {
+  content: " ";
+}
+.contact [href^="mailto:"]::before {
+  content: " ";
+}
+
+header > .burger {
+  margin-left: auto;
 }
 
 .burger {
@@ -92,6 +103,10 @@ img {
           user-select: none;
 }
 
+img {
+  display: inline-block;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
@@ -110,15 +125,4 @@ img {
 
 ::-webkit-scrollbar-thumb:hover {
   opacity: 0.75;
-}
-
-.contact [href^="tel:"]::before, .contact [href^="mailto:"]::before {
-  display: inline-block;
-  text-decoration: none;
-}
-.contact [href^="tel:"]::before {
-  content: " ";
-}
-.contact [href^="mailto:"]::before {
-  content: " ";
 }

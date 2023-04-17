@@ -19,13 +19,12 @@ body > .template {
 	background-color: var(--neutral);
 	color: var(--dark);
 
-	font-weight: 600;
 	font-family: Source Sans Pro, Helvetica Neue, sans-serif;
 	font-size: 15px;
 
 	> header {
 		display: flex;
-		justify-content: space-between;
+		align-items: center;
 		background-color: var(--bright);
 	}
 	> nav {
@@ -45,13 +44,24 @@ body > .template {
 	align-items: center;
 
 	font-size: 1.5em;
+	font-weight: 600;
 	text-decoration: none;
 }
-
-img {
-	display: inline-block;
+.contact {
+	[href^="tel:"]::before, [href^="mailto:"]::before {
+		display: inline-block;
+		text-decoration: none;
+	}
+	[href^="tel:"]::before {
+		content: " ";
+	}
+	[href^="mailto:"]::before {
+		content: " ";
+	}
 }
-
+header > .burger {
+	margin-left: auto;
+}
 .burger {
 	position: relative;
 	> input {
@@ -94,7 +104,9 @@ img {
 		user-select: none;
 	}
 }
-
+img {
+	display: inline-block;
+}
 ::-webkit-scrollbar {
 	width: 5px;
 	height: 5px;
@@ -110,16 +122,4 @@ img {
 }
 ::-webkit-scrollbar-thumb:hover {
 	opacity: .75;
-}
-.contact {
-	[href^="tel:"]::before, [href^="mailto:"]::before {
-		display: inline-block;
-		text-decoration: none;
-	}
-	[href^="tel:"]::before {
-		content: " ";
-	}
-	[href^="mailto:"]::before {
-		content: " ";
-	}
 }
