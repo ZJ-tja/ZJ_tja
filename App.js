@@ -11,7 +11,7 @@ server.register(fastify_socket_io_1.default, {
     transports: ['websocket'],
     serveClient: false,
     cors: {
-        origin: "https://zj_tja.onrender.com/"
+        origin: "https://zj-tja.onrender.com/"
     }
 });
 server.setNotFoundHandler((req, res) => {
