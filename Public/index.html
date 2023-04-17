@@ -23,7 +23,7 @@
 <body>
 	<div class="template">
 		<header>
-			<span>
+			<div>
 				<a class="brand" href="/">
 					<img src="/favicon-32x32.png" width="32" height="32" alt="ZJ">
 					<span>_tja</span>
@@ -32,19 +32,19 @@
 					<a href="tel:+48579318667">+48579318667</a>
 					<a href="mailto:ZJ_tja@proton.me">ZJ_tja@proton.me</a>
 				</span>
-			</span>
-			<span class="context-burger">
-				<input id="ContextBurger" onclick="Nav( 'NavContext', this.checked )" type="checkbox" aria-label="menu">
-				<label for="ContextBurger">
-					<div></div>
-					<div></div>
-					<div></div>
-					<span>Menu</span>
-				</label>
-			</span>
+				<span class="burger">
+					<input id="ContextBurger" onclick="Nav( 'NavContext', this.checked )" type="checkbox" aria-label="menu">
+					<label for="ContextBurger">
+						<div></div>
+						<div></div>
+						<div></div>
+						<span>Menu</span>
+					</label>
+				</span>
+			</div>
 		</header>
 		<nav>
-			<menu id="NavContext" type="context">
+			<menu class="wrap" id="NavContext" type="context">
 				<li class="active"><a href="/">Start</a></li>
 				<li class="active"><a href="/Shop/">Sklep</a></li>
 				<li class="active"><a href="/Projects/">Projekty</a></li>
@@ -52,7 +52,8 @@
 				<li class="active"><a href="/Account/">Konto</a></li>
 			</menu>
 		</nav>
-		<main id="Context">
+		<main>
+			<div class="wrap">
 		</main>
 		<footer>
 			<span id="CurrentYear">2023</span>

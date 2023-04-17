@@ -28,13 +28,6 @@ body > .template {
 	}
 	> nav {
 		background-color: var(--positive);
-		overflow-y: scroll;
-		max-height: 0px;
-		transition: all .5s cubic-bezier(0, 1, 0, 1), overflow .5s cubic-bezier(0, 1, 0, 1);
-		&[open] {
-			max-height: 50vh !important;
-			transition: max-height 1s ease-in-out;
-		}
 	}
 	> main {
 		overflow: auto;
@@ -42,14 +35,58 @@ body > .template {
 	> footer {
 		background-color: var(--bright);
 	}
-	> header > *, > nav > *, > main > *, > footer > * {
-		padding: 0 1rem;
-		box-sizing: border-box;
-	}
 }
 
 img {
 	display: inline-block;
+}
+.wrap {
+	margin: 0 auto;
+	padding: .5rem;
+	box-sizing: border-box;
+	width: 100%;
+}
+.burger {
+	position: relative;
+	> input {
+		position: absolute;
+		display: none;
+	}
+	> label {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: .25em;
+		cursor: pointer;
+	}
+	> label > div {
+		width: 100%;
+		height: .25em;
+		background-color: var(--contrast);
+		border-radius: .25em;
+		transition: transform .3s ease-in-out, opacity .3s ease-in-out;
+
+	}
+	> input:checked ~ label div {
+		&:nth-child(1) {
+			transform: rotate(45deg) translate(.345em, .345em);
+		}
+		&:nth-child(2) {
+			opacity: 0;
+		}
+		&:nth-child(3) {
+			transform: rotate(-45deg) translate(.345em, -.345em);
+		}
+	}
+	span {
+		position: absolute;
+		bottom: 0;
+		font-size: .75em;
+		font-weight: 400;
+		color: var(--contrast);
+		text-transform: uppercase;
+		user-select: none;
+	}
 }
 
 ::-webkit-scrollbar {

@@ -1,10 +1,10 @@
 "use strict";
 var globals = window; //TS-debug
 const IO = globals["io"]("", { transports: ['websocket'] });
-function Nav(id = "NavContext", expand = false) {
+function Nav(id = "NavContext", open = false) {
     let eNav;
     if ((eNav = document.getElementById(id)))
-        eNav.className = expand ? "expand" : "";
+        eNav.className = open ? "open" : "";
 }
 (function () {
     let eCurrentYear;
