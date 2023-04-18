@@ -4,7 +4,7 @@ import fastifyIO from "fastify-socket.io";
 import Tree from "./Module/Tree";
 
 const server = fastify( {
-	https: process.env.PORT ? {} : {
+	https: process.env.PORT ? null : {
 		// LOCALHOST CERTS
 		key: `-----BEGIN PRIVATE KEY-----
 MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC1lcNiRny+HuHv

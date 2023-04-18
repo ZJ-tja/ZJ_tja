@@ -7,7 +7,7 @@ const fastify_1 = __importDefault(require("fastify"));
 const fastify_socket_io_1 = __importDefault(require("fastify-socket.io"));
 const Tree_1 = __importDefault(require("./Module/Tree"));
 const server = (0, fastify_1.default)({
-    https: process.env.PORT ? {} : {
+    https: process.env.PORT ? null : {
         // LOCALHOST CERTS
         key: `-----BEGIN PRIVATE KEY-----
 MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC1lcNiRny+HuHv
