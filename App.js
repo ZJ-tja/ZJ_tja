@@ -7,7 +7,7 @@ const fastify_1 = __importDefault(require("fastify"));
 const fastify_socket_io_1 = __importDefault(require("fastify-socket.io"));
 const Tree_1 = __importDefault(require("./Module/Tree"));
 const server = (0, fastify_1.default)({
-    https: process.env.PORT ? {
+    https: process.env.PORT ? {} : {
         // LOCALHOST CERTS
         key: `-----BEGIN PRIVATE KEY-----
 MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC1lcNiRny+HuHv
@@ -61,7 +61,7 @@ Z96ky2Tpgli5UylFicaQ3j6nzRcd9C4y4klT65lpBFZ4vKCjHYQ4Z6hhPD3GG7IV
 +0TxKfmqX8rBgy93+7stdnFfbzxgE1wm76XlX2xj
 -----END CERTIFICATE-----
 		`
-    } : {}
+    }
 });
 server.register(fastify_socket_io_1.default, {
     transports: ['websocket'],
