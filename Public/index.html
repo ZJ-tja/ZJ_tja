@@ -1,5 +1,4 @@
 <html lang="pl">
-
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +18,6 @@
 	<link rel="manifest" href="/site.webmanifest">
 	<link rel="stylesheet" href="/index.css">
 </head>
-
 <body><div class="template">
 	<header>
 		<a class="brand" href="/">
@@ -45,18 +43,155 @@
 			<li><a href="/Account/">Konto</a></li>
 		</menu>
 	</nav>
-	<main>
-		<div class="palette3">Testy</div>
+	<main id="Context">
+		<div></div>
+		<article>
+			<h1>ZJ_tja</h1>
+			<p>
+				Witaj na mojej stronie internetowej! Jestem freelancerem specjalizującym się w tworzeniu profesjonalnych stron internetowych, aplikacji przeglądarkowych i landingpage'ów dla klientów z różnych branż. Oferuję spersonalizowane rozwiązania, które pomogą Ci osiągnąć Twoje cele biznesowe.
+			</p>
+			<p>
+				Dzięki mojemu doświadczeniu i wiedzy jestem w stanie dostarczyć produkty o wysokiej jakości w krótkim czasie. Moja praca opiera się na wskazówkach i wymaganiach klienta, a moim celem jest zapewnienie zadowolenia z końcowego produktu.
+			</p>
+			<h2>Lista moich usług obejmuje:</h2>
+			<ul>
+				<li>Tworzenie responsywnych stron internetowych dopasowanych do Twoich potrzeb</li>
+				<li>Projektowanie i rozwijanie aplikacji przeglądarkowych, które pomogą Ci osiągnąć cele biznesowe</li>
+				<li>Tworzenie landingpage'ów, które przyciągną uwagę Twoich potencjalnych klientów</li>
+				<li>Optymalizacja stron internetowych i aplikacji pod kątem SEO, co zwiększy ich widoczność w wyszukiwarkach</li>
+			</ul>
+			<p>Jestem zawsze otwarty na współpracę i gotowy do wysłuchania Twoich potrzeb. Współpracując ze mną, możesz być pewien, że
+			otrzymasz indywidualne podejście i rozwiązania, które spełnią Twoje wymagania. Skontaktuj się ze mną, aby porozmawiać o
+			Twoim projekcie!</p>
+		</article>
+		<span class="fill-bright col-2">
+			<span class="pd palette-3 fill">
+				<h3>Napisz do mnie</h3>
+				<p>Jeśli szukasz szczegółowych informacji dotyczących moich usług, chętnie udzielę Ci wszelkich odpowiedzi. Zachęcam do skorzystania z formularza, który jest najlepszym sposobem na nawiązanie ze mną kontaktu. Otwarty dialog z klientami jest dla mnie bardzo istotny, ponieważ pozwala mi na dostosowanie moich usług do	indywidualnych potrzeb każdego z nich. Dlatego też, jeśli masz jakiekolwiek pytania, nie wahaj się skontaktować ze mną - z przyjemnością udzielę Ci wyczerpujących odpowiedzi.</p>
+			</span>
+			<form class="pd form-1" action="/Contact/" onsubmit="event.preventDefault();alert('Udalo się');return false;">
+				<h3>Formularz kontaktowy</h3>
+				<fieldset>
+					<span>
+						<label for="ContactName" class="required">Nazwa</label>
+						<input type="text" name="name" id="ContactName" required="true" aria-required="true" size="8">
+					</span>
+					<span>
+						<label for="ContactEmail" class="required">E-mail</label>
+						<input type="email" name="email" id="ContactEmail" required="true" aria-required="true" size="8">
+					</span>
+				</fieldset>
+				<span>
+					<label for="ContactMessage" class="required">Wiadomość</label>
+					<textarea name="message" id="ContactMessage" required="true" aria-required="true" size="8"></textarea>
+				</span>
+				<span><span class="required"></span> - pola wymagane</span>
+				<button type="submit">Wyślij</button>
+			</form>
+		</span>
+		<span class="palette-4 fill col-2">
+			<iframe class="fullsize" scrolling="no" src="https://www.openstreetmap.org/export/embed.html?bbox=19.114987850189213%2C50.23501849426766%2C19.123206138610843%2C50.23927311198499&amp;layer=mapnik&amp;marker=50.237145850588576%2C19.119096994400024"></iframe>
+			<span class="pd fill">
+				<h3>Lokalizacja</h3>
+				<p>00-000 Nazwa miasta z lokalizacji</p>
+				<p>Ulica unikalna na placu jakości 1000/321</p>
+			</span>
+		</span>
 	</main>
 	<footer>
-		<div>
+		<span>
 			<span id="CurrentYear">2023</span>
-			&nbsp;&copy;&nbsp;
-			<a href="https://github.com/ZJ-tja">ZJ_tja</a>
-		</div>
+			&copy;
+			<a href="https://github.com/ZJ-tja">
+				<svg class="zj-svg" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+					<ellipse cx="64" cy="24" rx="16" ry="16"></ellipse>
+					<path d="M 12 64 C 48 78 32 48 64 48 C 96 48 80 78 116 64"></path>
+					<path d="M 44 112 L 24 112 C 6 112 6 90 24 90 L 44 90 L 64 100"></path>
+					<path d="M 80 90 L 104 90 C 122 90 122 112 104 112 L 80 112"></path>
+				</svg>
+			</a>
+		</span>
+		<span>
+			<span id="LightSwitchContainer">
+				<input type="checkbox" id="LightSwitch" onchange="Preferences.LightSwitch(this.checked)" role="button">
+				<label for="LightSwitch">
+					<span></span>
+				</label>
+			</span><span class="drop-up-right">
+				<input type="checkbox" id="Cookies" role="button">
+				<label for="Cookies">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+						<ellipse cx="12" cy="12" rx="11.5" ry="11.5" />
+						<ellipse cx="9" cy="6" rx=".25" ry=".25" />
+						<ellipse cx="15" cy="6" rx=".25" ry=".25" />
+						<ellipse cx="6" cy="12" rx=".25" ry=".25" />
+						<ellipse cx="12" cy="12" rx=".25" ry=".25" />
+						<ellipse cx="18" cy="12" rx=".25" ry=".25" />
+						<ellipse cx="9" cy="18" rx=".25" ry=".25" />
+						<ellipse cx="15" cy="18" rx=".25" ry=".25" />
+					</svg>
+				</label>
+				<div>
+					<h5>Preferencje ciasteczek</h5>
+					<div>
+						<input type="checkbox" id="CookiesNecessary" onchange="Preferences.CookiesSwitch(this)" role="button"
+							disabled>
+						<label for="CookiesNecessary">Niezbędne</label>
+						<input type="checkbox" id="CookiesAppearance" onchange="Preferences.CookiesSwitch(this)" role="button">
+						<label for="CookiesAppearance">Wygląd</label>
+					</div>
+				</div>
+			</span>
+			<span class="drop-up-right">
+				<input type="checkbox" id="Languages" role="button">
+				<label for="Languages">
+					<svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+						<ellipse cx="12" cy="12" rx="11.5" ry="11.5" />
+						<ellipse cx="12" cy="12" rx="5" ry="11.5" />
+						<path d="M 1 8 L 23 8" />
+						<path d="M 23 16 L 1 16" />
+					</svg>
+				</label>
+				<div>
+					<h5>Wybierz język</h5>
+					<div>
+						<div onclick="Preferences.LangSwitch('pl')">
+							<img src="./images/flags/pl.svg" width="32px" alt="flag of poland">
+							Polski
+						</div>
+					</div>
+				</div>
+			</span>
+			<span class="drop-up-right">
+				<input type="checkbox" id="Currencies" role="button">
+				<label for="Currencies">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 24" width="32" height="24">
+						<rect x=".5" y=".5" width="31" height="23"></rect>
+						<ellipse style="" cx="16" cy="12" rx="3.915" ry="3.915"></ellipse>
+						<ellipse style="" cx="1" cy="1" rx="2" ry="2"></ellipse>
+						<ellipse style="" cx="1" cy="23" rx="2" ry="2"></ellipse>
+						<ellipse style="" cx="31" cy="1" rx="2" ry="2"></ellipse>
+						<ellipse style="" cx="31" cy="23" rx="2" ry="2"></ellipse>
+						<text style="font-size: 10px;" x="3" y="11">zł</text>
+						<text style="font-size: 10px;" x="4" y="21">$</text>
+						<text style="font-size: 10px;" x="22" y="11">€</text>
+						<text style="font-size: 10px;" x="22" y="21">¥</text>
+					</svg>
+					</svg>
+				</label>
+				<div>
+					<h5>Wybierz walutę</h5>
+					<div>
+						<div onclick="Preferences.CurrencySwitch('zł')">zł - PLN</div>
+						<div onclick="Preferences.CurrencySwitch('$')">$ - USD</div>
+						<div onclick="Preferences.CurrencySwitch('€')">€ - EUR</div>
+						<div onclick="Preferences.CurrencySwitch('¥')">¥ - JPY</div>
+					</div>
+				</div>
+			</span>
+		</span>
 	</footer>
 </div>
 <script src="/index.js"></script>
 </body>
-
 </html>
