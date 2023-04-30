@@ -315,7 +315,7 @@ form > button[type=submit] {
   padding-left: 6vw;
   padding-right: 6vw;
 }
-#Context > .col > * {
+#Context > .col > :not(.fit) {
   padding-left: 6vw;
   padding-right: 6vw;
 }

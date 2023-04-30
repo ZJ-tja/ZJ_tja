@@ -381,7 +381,7 @@ form {
 		padding-left:$LeftPadding;
 		padding-right:$RightPadding;
 	}
-	>.col>* {
+	>.col>:not(.fit) {
 		padding-left:$LeftPadding;
 		padding-right:$RightPadding;
 	}
