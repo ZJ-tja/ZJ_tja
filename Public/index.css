@@ -22,7 +22,6 @@ img {
 a {
   text-decoration: none;
   color: inherit;
-  letter-spacing: 2px;
 }
 
 menu {
@@ -217,28 +216,43 @@ body, .plt-1 {
     overflow: hidden;
     background-color: var(--tetriary);
   }
-  .window > nav :first-child {
-    padding-left: 0;
-  }
-  .window > nav > menu {
-    display: flex;
-    align-items: stretch;
-  }
-  .window > nav li.active {
-    border-bottom: solid 0.25em var(--positive);
-    border-radius: 7%;
-  }
-  .window > nav li {
-    display: flex;
-    align-items: center;
-  }
-  .window > nav a::first-letter {
-    padding-left: 0.125em;
-    color: var(--tetriary);
-    background-color: var(--txt);
+  .window > nav > :first-child {
+    padding-left: 0 !important;
   }
   .window > nav, .window > nav.open {
     max-height: calc(var(--icon-height) + 0.5rem + 0.5rem);
+  }
+}
+
+menu[type=context] a {
+  padding: 0.25em;
+  font-size: 1.5rem;
+}
+menu[type=context] > li > a::first-letter {
+  padding-left: 1px;
+  padding-right: 1px;
+  color: var(--tetriary);
+  background-color: var(--txt);
+}
+menu[type=context] li > a:hover {
+  color: var(--tetriary);
+  background-color: var(--txt);
+}
+@media (min-width: 990px) {
+  menu[type=context] {
+    display: flex;
+    align-items: stretch;
+  }
+  menu[type=context] a {
+    font-size: 1.125rem;
+  }
+  menu[type=context] > li {
+    display: flex;
+    align-items: center;
+  }
+  menu[type=context] .active {
+    border-bottom: solid 0.25em var(--positive);
+    border-radius: 7%;
   }
 }
 
@@ -315,13 +329,13 @@ form > button[type=submit] {
   padding-left: 6vw;
   padding-right: 6vw;
 }
-#Context > .col > :not(.fit) {
+#Context > .col > * {
   padding-left: 6vw;
   padding-right: 6vw;
 }
 
 @media (max-width: 639px) {
-  #Context > .col-2, #Context > .col-3, #Context > .col-4, #Context > .col-5 {
+  #Context > .col-2 > :not(.fitt), #Context > .col-3 > :not(.fitt), #Context > .col-4 > :not(.fitt), #Context > .col-5 > :not(.fitt) {
     padding-left: 6vw;
     padding-right: 6vw;
   }

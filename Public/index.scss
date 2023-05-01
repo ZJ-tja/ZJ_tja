@@ -56,7 +56,6 @@ img {
 a {
 	text-decoration:none;
 	color:inherit;
-	letter-spacing:2px;
 }
 
 menu {
@@ -266,34 +265,51 @@ body, .plt-1 {
 			overflow:hidden;
 			background-color:var(--tetriary);
 
-			:first-child {
-				padding-left:0;
-			}
-
-			>menu {
-				display:flex;
-				align-items:stretch;
-			}
-
-			li.active {
-				border-bottom:solid .25em var(--positive);
-				border-radius:7%;
-			}
-
-			li {
-				display:flex;
-				align-items:center;
-			}
-
-			a::first-letter {
-				padding-left:.125em;
-				color:var(--tetriary);
-				background-color:var(--txt);
+			>:first-child {
+				padding-left: 0 !important;
 			}
 		}
 
 		>nav, >nav.open {
 			max-height:calc(var(--icon-height) + $TopPadding + $BotPadding);
+		}
+	}
+}
+
+menu[type="context"] {
+	a {
+		padding: .25em;
+		font-size: 1.5rem;
+	}
+
+	>li>a::first-letter {
+		padding-left: 1px;
+		padding-right: 1px;
+		color: var(--tetriary);
+		background-color: var(--txt);
+	}
+
+	li>a:hover{
+		color: var(--tetriary);
+		background-color: var(--txt);
+	}
+
+	@media (min-width:990px) {
+		display: flex;
+		align-items: stretch;
+
+		a {
+			font-size: 1.125rem;
+		}
+
+		>li {
+			display: flex;
+			align-items: center;
+		}
+
+		.active {
+			border-bottom: solid .25em var(--positive);
+			border-radius: 7%;
 		}
 	}
 }
@@ -381,7 +397,7 @@ form {
 		padding-left:$LeftPadding;
 		padding-right:$RightPadding;
 	}
-	>.col>:not(.fit) {
+	>.col>* {
 		padding-left:$LeftPadding;
 		padding-right:$RightPadding;
 	}
@@ -389,8 +405,10 @@ form {
 @media (max-width:639px) {
 	#Context {
 		>.col-2, >.col-3, >.col-4, >.col-5 {
-			padding-left:$LeftPadding;
-			padding-right:$RightPadding;
+			>:not(.fitt) {
+				padding-left:$LeftPadding;
+				padding-right:$RightPadding;
+			}
 		}
 	}
 }

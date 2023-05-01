@@ -64,7 +64,7 @@ server.register( fastifyIO, {
 	transports: [ 'websocket' ],
 	serveClient: false,
 	cors: {
-		origin: "https://zj-tja.onrender.com/"
+		origin: process.env.PORT ? "https://zj-test.onrender.com/" : "https://localhost/"
 	}
 } );
 
