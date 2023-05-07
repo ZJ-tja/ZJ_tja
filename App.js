@@ -67,7 +67,7 @@ server.register(fastify_socket_io_1.default, {
     transports: ['websocket'],
     serveClient: false,
     cors: {
-        origin: "https://zj-tja.onrender.com/"
+        origin: process.env.PORT ? "https://zj-test.onrender.com/" : "https://localhost/"
     }
 });
 server.setNotFoundHandler((req, res) => {

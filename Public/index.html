@@ -17,12 +17,26 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 	<link rel="manifest" href="/site.webmanifest">
 	<link rel="stylesheet" href="/index.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Alkatra&family=Bowlby+One+SC&family=Bungee&family=Bungee+Inline&family=Capriola&family=Cinzel+Decorative:wght@700;900&family=Great+Vibes&family=Itim&family=Mali:ital,wght@0,200;0,400;0,500;0,600;0,700;1,200;1,400;1,500;1,600;1,700&family=Rubik+Moonrocks&family=Short+Stack&family=Sigmar&family=Sriracha&family=VT323&family=Voltaire&family=Yatra+One&family=Yesteryear&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap" rel="stylesheet">
 </head>
-<body><div class="window">
-	<header>
-		<a class="brand" href="/">
-			<img src="/favicon-32x32.png" width="32" height="32" alt="ZJ">
-			<span>_tja</span>
+<body class="plt1"><div id="Template">
+	<header id="Header">
+		<a href="/">
+			<svg class="brand" style="font-family: Shojumaru;" viewBox="0 0 1000 325" xmlns="http://www.w3.org/2000/svg">
+				<text style="font-size:123px;fill:#4b0082" x="339" y="184">Kod</text>
+				<path style="fill:#fff;filter:drop-shadow(0px 0px .25em #888)"
+					d="M 229 129 L 185 129 L 185 185 L 241 185 L 285 185 L 285 205 L 185 206 L 157 323 L 122 323 C 141 269 145 219 145 206 L 71 206 L 65 185 L 145 185 L 145 125 L 121 121 L 113 99 L 33 81 L 1 1 C 49 49 421 49 469 1 L 437 81 L 357 99 L 349 121 L 325 125 L 325 185 L 405 185 L 399 206 L 325 206 C 325 219 330 269 353 323 L 317 323 L 285 206 L 285 129 L 241 129 L 241 185 L 229 185 L 229 129 Z" />
+				<text class="first" style="font-size:128px;letter-spacing: -8px;fill:#9e0b0f" x="330" y="292">Świątyni</text>
+				<g style="stroke:#87CEEB;stroke-width: 8px;fill:none;">
+					<ellipse cx="234" cy="232" rx="16" ry="16" style="stroke-width:8px;"></ellipse>
+					<path d="M 182 280 C 218 294 202 264 234 264 C 266 264 250 294 286 280"></path>
+					<path d="M 214 320 L 194 320 C 176 320 176 298 194 298 L 214 298 L 234 308"></path>
+					<path d="M 250 298 L 274 298 C 292 298 292 320 274 320 L 250 320"></path>
+				</g>
+			</svg>
 		</a>
 		<span class="burger">
 			<input id="ContextBurger" onclick="Nav( this.checked )" type="checkbox" aria-label="menu">
@@ -34,7 +48,7 @@
 			</label>
 		</span>
 	</header>
-	<nav>
+	<nav id="Nav">
 		<menu type="context">
 			<li><a href="/">Start</a></li>
 			<li><a href="/Shop/">Sklep</a></li>
@@ -43,8 +57,8 @@
 			<li><a href="/Account/">Konto</a></li>
 		</menu>
 	</nav>
-	<main>
-		<div class="test" id="Context">
+	<main id="Main">
+		<div id="Context">
 			<div>x</div>
 			<article class="pd">
 				<h1>ZJ_tja</h1>
@@ -103,18 +117,11 @@
 			</span>
 		</div>
 	</main>
-	<footer>
+	<footer id="Footer">
 		<span>
 			<span id="CurrentYear">2023</span>
 			&copy;
-			<a href="https://github.com/ZJ-tja">
-				<svg class="zj-svg" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
-					<ellipse cx="64" cy="24" rx="16" ry="16"></ellipse>
-					<path d="M 12 72 C 48 86 32 56 64 56 C 96 56 80 86 116 72"></path>
-					<path d="M 44 112 L 24 112 C 6 112 6 90 24 90 L 44 90 L 64 100"></path>
-					<path d="M 80 90 L 104 90 C 122 90 122 112 104 112 L 80 112"></path>
-				</svg>
-			</a>
+			
 		</span>
 		<!-- <span>
 			<span id="LightSwitchContainer">

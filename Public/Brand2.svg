@@ -1,0 +1,6 @@
+<svg class="brand" viewBox="0 0 700 322" xmlns="http://www.w3.org/2000/svg">
+	<text style="font-size:123px;fill:#4b0082" x="5" y="167">Kod</text>
+	<text class="first" style="font-size:128px;letter-spacing: -8px;fill:#9e0b0f" x="5" y="287">Świątyni</text>
+	<path style="fill:#fff;filter:drop-shadow(0px 0px .25em #888)"
+		d="M 460 128 L 416 128 L 416 184 L 472 184 L 516 184 L 516 204 L 416 205 L 388 322 L 353.035 322 C 372 268 376 218 376 205 L 302 205 L 296 184 L 376 184 L 376 124 L 352 120 L 344 98 L 264 80 L 232 0 C 280 48 652 48 700 0 L 668 80 L 588 98 L 580 120 L 556 124 L 556 184 L 636 184 L 630 205 L 556 205 C 556 218 561.461 268 584 322 L 548 322 L 516 205 L 516 128 L 472 128 L 472 184 L 460 184 L 460 128 Z" />
+</svg>

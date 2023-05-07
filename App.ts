@@ -1,4 +1,3 @@
-import { readFileSync } from "fs";
 import fastify, { FastifyReply, FastifyRequest } from "fastify";
 import fastifyIO from "fastify-socket.io";
 import Tree from "./Module/Tree";

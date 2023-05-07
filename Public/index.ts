@@ -6,7 +6,10 @@ function Nav( open = false, type ="context" ) {
 	let eNavs = document.getElementsByTagName( "nav" );
 	for ( const eNav of eNavs ) {
 		if ( eNav.querySelector( `[type="${ type }"]` ) ) {
-			eNav.className = open ? "open" : "";
+			if ( open )
+				eNav.className += " open";
+			else
+				eNav.className = eNav.className.replace( " open", "" );
 			break;
 		}
 	}
