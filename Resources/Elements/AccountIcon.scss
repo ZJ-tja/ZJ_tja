@@ -1,0 +1,41 @@
+@import "../Settings.scss";
+@import "../Templates/HeaderNavFooterStatic.scss";
+
+.account {
+	display: inline-flex;
+	align-items: center;
+	input {
+		display:none;
+	}
+
+	label, label>* {
+		display:block;
+		border-radius: 20%;
+		width:$account-logo-width;
+		height:$account-logo-height;
+	}
+
+	label {
+		position:relative;
+		border: dotted .125em $account-border;
+		cursor:pointer;
+		transition: .3s border-radius ease-in-out;
+	}
+
+	label::after {
+		position:absolute;
+		bottom:-.125em;
+		width:100%;
+		overflow: hidden;
+		font-size: .75em;
+		text-align: center;
+		text-shadow: 0px -1px 2px $account-text-shadow;
+		text-overflow: clip;
+		white-space: nowrap;
+		content:attr(title);
+	}
+	label:focus, label:hover {
+		border-radius: 50%;
+	}
+
+}

@@ -1,0 +1,40 @@
+@import "../Settings.scss";
+#Header {
+	grid-area: header;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	background-color: $header-bg;
+	color: $header-txt;
+
+	.buttons {
+		display: inline-flex;
+		align-items: center;
+		gap: $header-buttons-space;
+	}
+
+	// PADDINGS
+	>* {
+		padding-top: $header-top-padding;
+		padding-bottom: $header-bot-padding;
+	}
+	>:first-child {
+		padding-left: $header-left-padding;
+	}
+	@media (max-width:calc($SizeM - 1px)) {
+		>:last-child {
+			padding-right: $header-right-padding;
+		}
+	}
+	@media (min-width:$SizeM) {
+		.burger {
+			display: none;
+		}
+		// PADDINGS
+		>:last-child {
+			padding-right: 0;
+		}
+	}
+}

@@ -1,0 +1,110 @@
+#Context > .col > * {
+  padding-left: 6vw;
+  padding-right: 6vw;
+}
+@media (max-width: 639px) {
+  #Context > .col-2 > :not(.fitt), #Context > .col-3 > :not(.fitt), #Context > .col-4 > :not(.fitt), #Context > .col-5 > :not(.fitt) {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+}
+@media (min-width: 640px) {
+  #Context > .col-2 > :nth-child(2n+1) {
+    padding-left: 6vw;
+  }
+  #Context > .col-2 > :nth-child(2n) {
+    padding-right: 6vw;
+  }
+}
+@media (min-width: 640px) and (max-width: 959px) {
+  #Context > .col-3 > :nth-child(2n+1), #Context > .col-4 > :nth-child(2n+1), #Context > .col-5 > :nth-child(2n+1) {
+    padding-left: 6vw;
+  }
+  #Context > .col-3 > :nth-child(2n), #Context > .col-4 > :nth-child(2n), #Context > .col-5 > :nth-child(2n) {
+    padding-right: 6vw;
+  }
+}
+@media (min-width: 960px) {
+  #Context > .col-3 > :nth-child(3n+1) {
+    padding-left: 6vw;
+  }
+  #Context > .col-3 > :nth-child(3n) {
+    padding-right: 6vw;
+  }
+}
+@media (min-width: 960px) and (max-width: 1279px) {
+  #Context > .col-4 > :nth-child(3n+1), #Context > .col-5 > :nth-child(3n+1) {
+    padding-left: 6vw;
+  }
+  #Context > .col-4 > :nth-child(3n), #Context > .col-5 > :nth-child(3n) {
+    padding-right: 6vw;
+  }
+}
+@media (min-width: 1280px) {
+  #Context > .col-4 > :nth-child(4n+1) {
+    padding-left: 6vw;
+  }
+  #Context > .col-4 > :nth-child(4n) {
+    padding-right: 6vw;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1599px) {
+  #Context > .col-5 > :nth-child(4n+1) {
+    padding-left: 6vw;
+  }
+  #Context > .col-5 > :nth-child(4n) {
+    padding-right: 6vw;
+  }
+}
+@media (min-width: 1600px) {
+  #Context > .col-5 > :nth-child(5n+1) {
+    padding-left: 6vw;
+  }
+  #Context > .col-5 > :nth-child(5n) {
+    padding-right: 6vw;
+  }
+}
+
+.col, .col-2, .col-3, .col-4, .col-5 {
+  display: grid;
+}
+
+.col {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .col-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 640px) and (max-width: 959px) {
+  .col-3, .col-4, .col-5 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 960px) {
+  .col-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 960px) and (max-width: 1279px) {
+  .col-4, .col-5 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1280px) {
+  .col-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 1280px) and (max-width: 1599px) {
+  .col-5 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 1600px) {
+  .col-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

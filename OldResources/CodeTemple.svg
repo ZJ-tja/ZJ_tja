@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg class="brand" style="font-family: Shojumaru;" viewBox="0 0 1000 325" xmlns="http://www.w3.org/2000/svg">
+  <text style="font-size:123px;fill:#4b0082" x="339" y="184">Kod</text>
+  <path style="fill:#fff;filter:drop-shadow(0px 0px .25em #888)"
+    d="M 229 129 L 185 129 L 185 185 L 241 185 L 285 185 L 285 205 L 185 206 L 157 323 L 122 323 C 141 269 145 219 145 206 L 71 206 L 65 185 L 145 185 L 145 125 L 121 121 L 113 99 L 33 81 L 1 1 C 49 49 421 49 469 1 L 437 81 L 357 99 L 349 121 L 325 125 L 325 185 L 405 185 L 399 206 L 325 206 C 325 219 330 269 353 323 L 317 323 L 285 206 L 285 129 L 241 129 L 241 185 L 229 185 L 229 129 Z" />
+  <text class="first" style="font-size:128px;letter-spacing: -8px;fill:#9e0b0f" x="330" y="292">Świątyni</text>
+  <g style="stroke:#87CEEB;stroke-width: 6px;fill:none;">
+    <ellipse cx="234" cy="232" rx="16" ry="16" style="stroke-width:8px;"></ellipse>
+    <path d="M 182 280 C 218 294 202 264 234 264 C 266 264 250 294 286 280"></path>
+    <path d="M 214 320 L 194 320 C 176 320 176 298 194 298 L 214 298 L 234 308"></path>
+    <path d="M 250 298 L 274 298 C 292 298 292 320 274 320 L 250 320"></path>
+  </g>
+</svg>

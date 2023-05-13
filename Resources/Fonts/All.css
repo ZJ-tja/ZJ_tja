@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shantell+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alexandria&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chivo+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+.f-bruno {
+  font-family: "Bruno Ace", cursive;
+}
+
+.f-shantell {
+  font-family: "Shantell Sans", cursive;
+}
+
+.f-alexandria {
+  font-family: "Alexandria", sans-serif;
+}
+
+.f-chivo-mono {
+  font-family: "Chivo Mono", monospace;
+}
+
+.f-roboto {
+  font-family: "Roboto", sans-serif;
+}
+
+.f-lato {
+  font-family: "Lato", sans-serif;
+}
+
+.f-josefin {
+  font-family: "Josefin Sans", sans-serif;
+}

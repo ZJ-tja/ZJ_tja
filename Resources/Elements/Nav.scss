@@ -1,0 +1,82 @@
+@import "../Settings.scss";
+#Nav {
+	grid-area: nav;
+	display: flex;
+	justify-content: flex-end;
+	transition: all .5s cubic-bezier(0, 1, 0, 1), overflow .5s cubic-bezier(0, 1, 0, 1);
+	&.open {
+		max-height: 50vh !important;
+		transition: max-height 1s ease-in-out;
+	}
+
+	>menu {
+		list-style-type: none;
+		padding-right: $nav-right-padding;
+	}
+
+	li {
+		display: flex;
+	}
+
+	a {
+		text-align: center;
+		width: 100%;
+		padding: .5em .25em;
+		border: solid .125em $nav-txt;
+	}
+
+	@media (max-width:calc($SizeM - 1px)) {
+		background-color: $nav-bg;
+		color: $nav-txt;
+		max-height: 0px;
+		overflow-y: scroll;
+		>menu {
+			padding-left: $nav-left-padding;
+		}
+
+		a {
+			margin: .25em;
+			font-size: 1.25rem;
+		}
+	}
+	@media (min-width:$SizeM) {
+		align-items: stretch;
+
+		overflow: hidden;
+		background-color: $nav-bg2;
+		color: $nav-txt2;
+		max-height: unset;
+
+		>menu {
+			display: inline-flex;
+			gap: $nav-spacing;
+			padding-left: $nav-spacing !important;
+			font-size: 1.125rem;
+		}
+
+		li {
+			border-top: solid .25em $nav-bg2;
+			border-bottom: solid .25em $nav-bg2;
+			transition: .3s border ease-in-out;
+		}
+
+		.active {
+			border-color: $nav-active;
+		}
+		li:focus, li:hover {
+			border-color: $nav-focus;
+		}
+
+		a {
+			margin: auto;
+			font-size: 1.125rem;
+			transition: .3s background ease-in-out, .3s border-radius ease-in-out, .3s color ease-in-out;
+		}
+
+		a:focus, a:hover {
+			background-color: $nav-txt2;
+			color: $nav-bg2;
+			border-radius: 50%;
+		}
+	}
+}

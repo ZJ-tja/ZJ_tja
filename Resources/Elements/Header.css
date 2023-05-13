@@ -1,0 +1,33 @@
+#Header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg);
+  color: var(--txt);
+}
+#Header .buttons {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+}
+#Header > * {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+#Header > :first-child {
+  padding-left: 6vw;
+}
+@media (max-width: 959px) {
+  #Header > :last-child {
+    padding-right: 6vw;
+  }
+}
+@media (min-width: 960px) {
+  #Header .burger {
+    display: none;
+  }
+  #Header > :last-child {
+    padding-right: 0;
+  }
+}
