@@ -22,7 +22,6 @@
 		text-align: center;
 		width: 100%;
 		padding: .5em .25em;
-		border: solid .125em $nav-txt;
 	}
 
 	@media (max-width:calc($SizeM - 1px)) {
@@ -37,6 +36,7 @@
 		a {
 			margin: .25em;
 			font-size: 1.25rem;
+			border: solid .125em $nav-txt;
 		}
 	}
 	@media (min-width:$SizeM) {
@@ -61,7 +61,7 @@
 		}
 
 		.active {
-			border-color: $nav-active;
+			border-color: $nav-active !important;
 		}
 		li:focus, li:hover {
 			border-color: $nav-focus;
@@ -74,7 +74,7 @@
 		}
 
 		a:focus, a:hover {
-			background-color: $nav-txt2;
+			background-color: $nav-active;
 			color: $nav-bg2;
 			border-radius: 50%;
 		}

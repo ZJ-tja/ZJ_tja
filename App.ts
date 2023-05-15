@@ -85,6 +85,7 @@ function handler( req: FastifyRequest, res: FastifyReply ) {
 }
 
 Tree.Cache( "Public", __dirname );
+console.log(Tree.Tree);
 server.get( "/*", {
 	config: {
 		Finder: ( uri: string ) => {

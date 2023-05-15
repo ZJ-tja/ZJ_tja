@@ -2,6 +2,6 @@
 #Main {
 	grid-area: main;
 	overflow: auto;
-	background-color: var(--bg3);
-	color: var(--txt3);
+	background-color: $main-bg;
+	color: $main-txt;
 }

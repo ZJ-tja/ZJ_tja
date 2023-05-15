@@ -1,0 +1,29 @@
+.f {
+  display: flex;
+}
+
+.if {
+  display: inline-flex;
+}
+
+.f.at, .if.at {
+  align-items: start;
+}
+.f.ac, .if.ac {
+  align-items: center;
+}
+.f.gap-xs, .if.gap-xs {
+  gap: 0.25em;
+}
+.f.gap-s, .if.gap-s {
+  gap: 0.5em;
+}
+.f.gap, .if.gap {
+  gap: 1em;
+}
+.f.gap-l, .if.gap-l {
+  gap: 1.5em;
+}
+.f.gap-xl, .if.gap-xl {
+  gap: 2em;
+}

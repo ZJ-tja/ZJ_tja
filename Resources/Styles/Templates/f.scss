@@ -1,0 +1,30 @@
+@import "../Settings.scss";
+.f {
+	display: flex;
+}
+.if {
+	display: inline-flex;
+}
+.f, .if {
+	&.at {
+		align-items: start;
+	}
+	&.ac {
+		align-items: center;
+	}
+	&.gap-xs {
+		gap: $GapXS;
+	}
+	&.gap-s {
+		gap: $GapS;
+	}
+	&.gap {
+		gap: $GapM;
+	}
+	&.gap-l {
+		gap: $GapL;
+	}
+	&.gap-xl {
+		gap: $GapXL;
+	}
+}

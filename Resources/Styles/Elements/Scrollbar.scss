@@ -1,0 +1,13 @@
+@import "../Settings.scss";
+::-webkit-scrollbar {
+	width: $scrollbar-size;
+	height: $scrollbar-size;
+}
+::-webkit-scrollbar-track {
+	background: $scrollbar-bg;
+}
+::-webkit-scrollbar-thumb {
+	background: $scrollbar-thumb;
+	cursor: pointer;
+	border-radius: $scrollbar-size;
+}

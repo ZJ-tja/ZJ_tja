@@ -1,0 +1,36 @@
+@import "../Settings.scss";
+// Element paddings pd[-[s,m,l,xl]][-[childs]]
+.pd-xs .pd-xs-childs>* {
+	padding-top: $PaddingXS;
+	padding-right: $PaddingXS;
+	padding-bottom: $PaddingXS;
+	padding-left: $PaddingXS;
+}
+.pd-s, .pd-s-childs>* {
+	padding-top: $PaddingS;
+	padding-right: $PaddingS;
+	padding-bottom: $PaddingS;
+	padding-left: $PaddingS;
+}
+.pd, .pd-childs>* {
+	padding-top: $PaddingM;
+	padding-right: $PaddingM;
+	padding-bottom: $PaddingM;
+	padding-left: $PaddingM;
+}
+.pd-l, .pd-l-childs>* {
+	padding-top: $PaddingL;
+	padding-right: $PaddingL;
+	padding-bottom: $PaddingL;
+	padding-left: $PaddingL;
+}
+.pd-xl, .pd-xl-childs>* {
+	padding-top: $PaddingXL;
+	padding-right: $PaddingXL;
+	padding-bottom: $PaddingXL;
+	padding-left: $PaddingXL;
+}
+// Element box-sizing border-box bbpd[-childs]
+.bbpd, .bbpd-childs>* {
+	box-sizing: border-box;
+}

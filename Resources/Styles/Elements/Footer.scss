@@ -1,9 +1,12 @@
 @import "../Settings.scss";
+
+$footer-bg: var(--bg);
+$footer-txt: var(--txt);
 #Footer {
 	grid-area: footer;
 
-	background-color: var(--bg);
-	color: var(--txt);
+	background-color:$footer-bg;
+	color:$footer-txt;
 
 	>* {
 		padding-top: $template-top-padding;

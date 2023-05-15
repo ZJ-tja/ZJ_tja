@@ -25,6 +25,11 @@ $GapM: $GapXS*4; //1em
 $GapL: $GapXS*6; //1.5em
 $GapXL: $GapXS*8; //2em
 
+// Scrollbar
+$scrollbar-size: 6px;
+$scrollbar-bg: var(--shadow);
+$scrollbar-thumb: var(--active);
+
 // Template
 $template-top-padding: .5rem;
 $template-right-padding: 6vw;
@@ -55,7 +60,9 @@ $nav-active:var(--active);
 $nav-focus:var(--border);
 $nav-spacing:.25em;
 
-// 
+// Main
+$main-bg: var(--bg);
+$main-txt: var(--txt);
 
 // BrandIcon
 $brand-height: 3.5em;

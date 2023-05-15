@@ -1,26 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Alexandria&display=swap");
 .plt1 {
   --bg:#FFFFFF;
-  --txt: #3D0FA5;
-  --bg2:#3D0FA5;
-  --txt2: #FFFFFF;
-  --bg3: #F5F5DC;
-  --txt3: #09090A;
-  --active: #3D0FA5;
-  --border: #E0E0E0;
-  --shadow: #D0D0D0;
-  --txt-shadow: #D0D0D0;
+  --txt:#3D0FA5;
+  --bg2:#E0E0E0;
+  --txt2:#666970;
+  --bg3:#D0D0D0;
+  --txt3:#09090A;
+  --active:#0087fe;
+  --border:#E0E0E0;
+  --shadow:#D0D0D0;
+  --txt-shadow:#D0D0D0;
 }
 
 .plt2 {
-  --bg: #1E1F20;
+  --bg: #666970;
   --txt: #FFFFFF;
   --bg2: #9e0b0f;
   --txt2: #E8CB3A;
-  --active: #9ACD32;
+  --active: #FFFC7F;
   --border: #FFFFFF;
   --shadow: #666970;
   --txt-shadow: #666970;
+}
+
+.plt3 {
+  --bg: #110038;
+  --txt: #FFFFFF;
+  --bg2: #3D0FA5;
+  --txt2: #FFFFFF;
+  --bg3: #0B4ADB;
+  --txt3: #FFFFFF;
+  --active: #00FF00;
+  --border: #00526E;
+  --shadow: #09090A;
+  --txt-shadow: #19C6FF;
 }
 
 .f-alexandria {
@@ -82,7 +95,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-top: 0.67em;
   margin-bottom: 0.67em;
   font-weight: 800;
-  text-align: center;
 }
 
 h1, .h1 {
@@ -113,7 +125,197 @@ p {
   font-weight: 500;
   line-height: 1.5em;
   letter-spacing: 1px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--shadow);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--active);
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.burger {
+  display: inline-block;
+  width: 2.5em;
+  height: 2.5em;
+}
+.burger input {
+  display: none;
+}
+.burger label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3125em;
+  cursor: pointer;
+}
+.burger label div {
+  width: 100%;
+  height: 0.3125em;
+  background-color: var(--active);
+  border-radius: 0.25em;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.burger input:checked ~ label div:nth-child(1) {
+  transform: rotate(45deg) translate(0.440625em, 0.440625em);
+}
+.burger input:checked ~ label div:nth-child(2) {
+  opacity: 0;
+}
+.burger input:checked ~ label div:nth-child(3) {
+  transform: rotate(-45deg) translate(0.440625em, -0.440625em);
+}
+.burger span {
+  font-size: 0.75em;
+  color: var(--active);
+  text-shadow: 0px -1px 2px var(--txt-shadow);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.brand {
+  height: 3.5em;
+}
+
+#Header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg);
+  color: var(--txt);
+}
+#Header .buttons {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+}
+#Header > * {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+#Header > :first-child {
+  padding-left: 6vw;
+}
+@media (max-width: 959px) {
+  #Header > :last-child {
+    padding-right: 6vw;
+  }
+}
+@media (min-width: 960px) {
+  #Header .burger {
+    display: none;
+  }
+  #Header > :last-child {
+    padding-right: 0;
+  }
+}
+
+#Nav {
+  grid-area: nav;
+  display: flex;
+  justify-content: flex-end;
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1), overflow 0.5s cubic-bezier(0, 1, 0, 1);
+}
+#Nav.open {
+  max-height: 50vh !important;
+  transition: max-height 1s ease-in-out;
+}
+#Nav > menu {
+  list-style-type: none;
+  padding-right: 6vw;
+}
+#Nav li {
+  display: flex;
+}
+#Nav a {
   text-align: center;
+  width: 100%;
+  padding: 0.5em 0.25em;
+}
+@media (max-width: 959px) {
+  #Nav {
+    background-color: var(--bg2);
+    color: var(--txt2);
+    max-height: 0px;
+    overflow-y: scroll;
+  }
+  #Nav > menu {
+    padding-left: 6vw;
+  }
+  #Nav a {
+    margin: 0.25em;
+    font-size: 1.25rem;
+    border: solid 0.125em var(--txt2);
+  }
+}
+@media (min-width: 960px) {
+  #Nav {
+    align-items: stretch;
+    overflow: hidden;
+    background-color: var(--bg);
+    color: var(--txt);
+    max-height: unset;
+  }
+  #Nav > menu {
+    display: inline-flex;
+    gap: 0.25em;
+    padding-left: 0.25em !important;
+    font-size: 1.125rem;
+  }
+  #Nav li {
+    border-top: solid 0.25em var(--bg);
+    border-bottom: solid 0.25em var(--bg);
+    transition: 0.3s border ease-in-out;
+  }
+  #Nav .active {
+    border-color: var(--active) !important;
+  }
+  #Nav li:focus, #Nav li:hover {
+    border-color: var(--border);
+  }
+  #Nav a {
+    margin: auto;
+    font-size: 1.125rem;
+    transition: 0.3s background ease-in-out, 0.3s border-radius ease-in-out, 0.3s color ease-in-out;
+  }
+  #Nav a:focus, #Nav a:hover {
+    background-color: var(--active);
+    color: var(--bg);
+    border-radius: 50%;
+  }
+}
+
+#Main {
+  grid-area: main;
+  overflow: auto;
+  background-color: var(--bg);
+  color: var(--txt);
+}
+
+#Footer {
+  grid-area: footer;
+  background-color: var(--bg);
+  color: var(--txt);
+}
+#Footer > * {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+#Footer > :first-child {
+  padding-left: 6vw;
+}
+#Footer > :last-child {
+  padding-right: 6vw;
 }
 
 #Template {
@@ -136,11 +338,165 @@ p {
   }
 }
 
+#Context > .col > * {
+  padding-left: 6vw;
+  padding-right: 6vw;
+}
+@media (max-width: 639px) {
+  #Context > .col-2 > :not(.fitt), #Context > .col-3 > :not(.fitt), #Context > .col-4 > :not(.fitt), #Context > .col-5 > :not(.fitt) {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+}
+@media (min-width: 640px) {
+  #Context > .col-2 > :nth-child(2n+1) {
+    padding-left: 6vw;
+  }
+  #Context > .col-2 > :nth-child(2n) {
+    padding-right: 6vw;
+  }
+}
+@media (min-width: 640px) and (max-width: 959px) {
+  #Context > .col-3 > :nth-child(2n+1), #Context > .col-4 > :nth-child(2n+1), #Context > .col-5 > :nth-child(2n+1) {
+    padding-left: 6vw;
+  }
+  #Context > .col-3 > :nth-child(2n), #Context > .col-4 > :nth-child(2n), #Context > .col-5 > :nth-child(2n) {
+    padding-right: 6vw;
+  }
+}
+@media (min-width: 960px) {
+  #Context > .col-3 > :nth-child(3n+1) {
+    padding-left: 6vw;
+  }
+  #Context > .col-3 > :nth-child(3n) {
+    padding-right: 6vw;
+  }
+}
+@media (min-width: 960px) and (max-width: 1279px) {
+  #Context > .col-4 > :nth-child(3n+1), #Context > .col-5 > :nth-child(3n+1) {
+    padding-left: 6vw;
+  }
+  #Context > .col-4 > :nth-child(3n), #Context > .col-5 > :nth-child(3n) {
+    padding-right: 6vw;
+  }
+}
+@media (min-width: 1280px) {
+  #Context > .col-4 > :nth-child(4n+1) {
+    padding-left: 6vw;
+  }
+  #Context > .col-4 > :nth-child(4n) {
+    padding-right: 6vw;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1599px) {
+  #Context > .col-5 > :nth-child(4n+1) {
+    padding-left: 6vw;
+  }
+  #Context > .col-5 > :nth-child(4n) {
+    padding-right: 6vw;
+  }
+}
+@media (min-width: 1600px) {
+  #Context > .col-5 > :nth-child(5n+1) {
+    padding-left: 6vw;
+  }
+  #Context > .col-5 > :nth-child(5n) {
+    padding-right: 6vw;
+  }
+}
+
+.col, .col-2, .col-3, .col-4, .col-5 {
+  display: grid;
+}
+
+.col {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .col-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 640px) and (max-width: 959px) {
+  .col-3, .col-4, .col-5 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 960px) {
+  .col-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 960px) and (max-width: 1279px) {
+  .col-4, .col-5 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1280px) {
+  .col-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 1280px) and (max-width: 1599px) {
+  .col-5 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 1600px) {
+  .col-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+.pd-xs .pd-xs-childs > * {
+  padding-top: 0.25em;
+  padding-right: 0.25em;
+  padding-bottom: 0.25em;
+  padding-left: 0.25em;
+}
+
+.pd-s, .pd-s-childs > * {
+  padding-top: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 0.5em;
+}
+
+.pd, .pd-childs > * {
+  padding-top: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+}
+
+.pd-l, .pd-l-childs > * {
+  padding-top: 1.5em;
+  padding-right: 1.5em;
+  padding-bottom: 1.5em;
+  padding-left: 1.5em;
+}
+
+.pd-xl, .pd-xl-childs > * {
+  padding-top: 2em;
+  padding-right: 2em;
+  padding-bottom: 2em;
+  padding-left: 2em;
+}
+
+.bbpd, .bbpd-childs > * {
+  box-sizing: border-box;
+}
+
 #Context {
   height: auto;
 }
-#Context > :first-child {
-  padding-top: 1em;
+#Context > :first-child::after {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 4px;
+  content: " ";
+  box-shadow: 0px 4px 2px -2px var(--bg) inset;
 }
 #Context > .fit, #Context > * > .fit {
   padding: 0 !important;
@@ -152,11 +508,7 @@ p {
 }
 
 .author {
-  background-color: var(--bg);
   position: relative;
-  font-size: 3.125vw;
-  color: var(--txt);
-  text-align: center;
 }
 .author > img {
   display: block;
@@ -170,6 +522,9 @@ p {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  color: var(--txt);
+  font-size: 3.125vw;
+  text-align: center;
 }
 .author > div > h1 {
   margin-bottom: 0;
@@ -227,97 +582,4 @@ form > button[type=submit] {
   font-size: 1em;
   text-transform: uppercase;
   cursor: pointer;
-}
-
-.pd-xs .pd-xs-childs > * {
-  padding-top: 0.25em;
-  padding-right: 0.25em;
-  padding-bottom: 0.25em;
-  padding-left: 0.25em;
-}
-
-.pd-s, .pd-s-childs > * {
-  padding-top: 0.5em;
-  padding-right: 0.5em;
-  padding-bottom: 0.5em;
-  padding-left: 0.5em;
-}
-
-.pd, .pd-childs > * {
-  padding-top: 1em;
-  padding-right: 1em;
-  padding-bottom: 1em;
-  padding-left: 1em;
-}
-
-.pd-l, .pd-l-childs > * {
-  padding-top: 1.5em;
-  padding-right: 1.5em;
-  padding-bottom: 1.5em;
-  padding-left: 1.5em;
-}
-
-.pd-xl, .pd-xl-childs > * {
-  padding-top: 2em;
-  padding-right: 2em;
-  padding-bottom: 2em;
-  padding-left: 2em;
-}
-
-.bbpd, .bbpd-childs > * {
-  box-sizing: border-box;
-}
-
-.f {
-  display: flex;
-}
-
-.if {
-  display: inline-flex;
-}
-
-.f.at, .if.at {
-  align-items: start;
-}
-.f.ac, .if.ac {
-  align-items: center;
-}
-
-.gap-xs {
-  gap: 0.25em;
-}
-
-.gap-s {
-  gap: 0.5em;
-}
-
-.gap {
-  gap: 1em;
-}
-
-.gap-l {
-  gap: 1.5em;
-}
-
-.gap-xl {
-  gap: 2em;
-}
-
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--shadow);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--active);
-  cursor: pointer;
-  border-radius: 8px;
-}
-
-::-webkit-scrollbar-thumb:focus {
-  opacity: 0.75;
 }

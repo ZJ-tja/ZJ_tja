@@ -1,0 +1,38 @@
+.pd-xs .pd-xs-childs > * {
+  padding-top: 0.25em;
+  padding-right: 0.25em;
+  padding-bottom: 0.25em;
+  padding-left: 0.25em;
+}
+
+.pd-s, .pd-s-childs > * {
+  padding-top: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 0.5em;
+}
+
+.pd, .pd-childs > * {
+  padding-top: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+}
+
+.pd-l, .pd-l-childs > * {
+  padding-top: 1.5em;
+  padding-right: 1.5em;
+  padding-bottom: 1.5em;
+  padding-left: 1.5em;
+}
+
+.pd-xl, .pd-xl-childs > * {
+  padding-top: 2em;
+  padding-right: 2em;
+  padding-bottom: 2em;
+  padding-left: 2em;
+}
+
+.bbpd, .bbpd-childs > * {
+  box-sizing: border-box;
+}

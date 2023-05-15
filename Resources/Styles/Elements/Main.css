@@ -1,0 +1,6 @@
+#Main {
+  grid-area: main;
+  overflow: auto;
+  background-color: var(--bg);
+  color: var(--txt);
+}

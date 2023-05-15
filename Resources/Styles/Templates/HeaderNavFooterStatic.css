@@ -1,3 +1,37 @@
+#Header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg);
+  color: var(--txt);
+}
+#Header .buttons {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+}
+#Header > * {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+#Header > :first-child {
+  padding-left: 6vw;
+}
+@media (max-width: 959px) {
+  #Header > :last-child {
+    padding-right: 6vw;
+  }
+}
+@media (min-width: 960px) {
+  #Header .burger {
+    display: none;
+  }
+  #Header > :last-child {
+    padding-right: 0;
+  }
+}
+
 #Nav {
   grid-area: nav;
   display: flex;
@@ -70,5 +104,48 @@
     background-color: var(--txt);
     color: var(--bg);
     border-radius: 50%;
+  }
+}
+
+#Main {
+  grid-area: main;
+  overflow: auto;
+  background-color: var(--bg3);
+  color: var(--txt3);
+}
+
+#Footer {
+  grid-area: footer;
+  background-color: var(--bg);
+  color: var(--txt);
+}
+#Footer > * {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+#Footer > :first-child {
+  padding-left: 6vw;
+}
+#Footer > :last-child {
+  padding-right: 6vw;
+}
+
+#Template {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  grid-template-areas: "header" "nav" "main" "footer";
+  grid-template-rows: min-content min-content auto min-content;
+  background-color: var(--bg);
+  color: var(--txt);
+  font-family: Source Sans Pro, Helvetica Neue, sans-serif;
+  font-size: 16px;
+}
+@media (min-width: 960px) {
+  #Template {
+    grid-template-areas: "header nav" "main main" "footer footer";
+    grid-template-rows: min-content auto min-content;
+    grid-template-columns: auto min-content;
   }
 }

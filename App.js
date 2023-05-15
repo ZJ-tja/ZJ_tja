@@ -86,6 +86,7 @@ function handler(req, res) {
     res.callNotFound();
 }
 Tree_1.default.Cache("Public", __dirname);
+console.log(Tree_1.default.Tree);
 server.get("/*", {
     config: {
         Finder: (uri) => {
