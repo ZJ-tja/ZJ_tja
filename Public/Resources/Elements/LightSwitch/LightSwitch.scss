@@ -1,0 +1,57 @@
+
+#LightSwitch {
+	display: inline-block;
+	position: relative;
+	width: 2.5em;
+	height: 1.5em;
+	background-color: var(--bg2);
+	box-shadow: 0 0 1px 1px var(--shadow) inset;
+	border-radius: 1em;
+	padding: .125em;
+	box-sizing: border-box;
+	>input {
+		display: none;
+	}
+
+	>label {
+		display: inline-block;
+		position: absolute;
+		cursor: pointer;
+		width: 2.25em;
+		height: 1.25em;
+
+		&::before {
+			position: absolute;
+			content: ' ';
+			display: block;
+			width: 1.25em;
+			height: 1.25em;
+			border-radius: 100%;
+			background-color: var(--bg);
+			transition: all .3s ease-in-out;
+			box-shadow: 0 0 1px 2px var(--contrast);
+		}
+
+		>span {
+			display: inline-block;
+			position: absolute;
+			top: .125em;
+			left: .125em;
+			z-index: 1;
+			width: 1em;
+			height: 1em;
+			background-color: var(--txt);
+			mask-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMzIgMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+Cgk8Y2lyY2xlIHN0eWxlPSJmaWxsOiMwMDA7IiBjeD0iMTYiIGN5PSIxNiIgcj0iNiIvPgoJPGcgc3R5bGU9InN0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZTojMDAwO2ZpbGw6bm9uZTsiPgoJCTxsaW5lIHgxPSIxNiIgeTE9IjgiIHgyPSIxNiIgeTI9IjIiLz4KCQk8bGluZSB4MT0iMTYiIHkxPSIyNCIgeDI9IjE2IiB5Mj0iMzAiLz4KCQk8bGluZSB4MT0iMjQiIHkxPSIxNiIgeDI9IjMwIiB5Mj0iMTYiLz4KCQk8bGluZSB4MT0iOCIgeTE9IjE2IiB4Mj0iMiIgeTI9IjE2Ii8+CgkJPGxpbmUgeDE9IjEwIiB5MT0iMTAiIHgyPSI1IiB5Mj0iNSIvPgoJCTxsaW5lIHgxPSIyMiIgeTE9IjEwIiB4Mj0iMjciIHkyPSI1Ii8+CgkJPGxpbmUgeDE9IjIyIiB5MT0iMjIiIHgyPSIyNyIgeTI9IjI3Ii8+CgkJPGxpbmUgeDE9IjEwIiB5MT0iMjIiIHgyPSI1IiB5Mj0iMjciLz4KCTwvZz4KPC9zdmc+);
+			transition: all .3s ease-in-out;
+		}
+	}
+
+	>input:checked + label::before {
+		transform: translateX(1em);
+	}
+
+	>input:checked + label>span {
+		mask-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMzIgMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGcgY2xhc3M9ImZpbGw6IzAwMCI+CiAgICA8cGF0aCBkPSJNIDE2IDMgQyA2IDMgMSAxMyA1IDIxIEMgMTAgMzAgMjIgMzAgMjcgMjIgQyAyOCAyMCAyOCAyMCAyNyAyMCBDIDIwIDIwIDEzIDEzIDE2IDMiLz4KICAgIDxwb2x5Z29uIHBvaW50cz0iMjMgNiAyMiA5IDE5IDEwIDIyIDExIDIzIDE0IDI0IDExIDI3IDEwIDI0IDkiLz4KICA8L2c+Cjwvc3ZnPg==);
+		transform: translateX(1em);
+	}
+}

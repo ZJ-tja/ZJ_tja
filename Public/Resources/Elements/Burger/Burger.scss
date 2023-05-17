@@ -1,9 +1,12 @@
-@import "../Settings.scss";
-
+$burger-size: 2.5em;
+$burger-color: var(--active);
+$burger-shadow: var(--txt-shadow);
+$burger-space: calc($burger-size / 8);
+$burger-translate: calc($burger-space * 1.41);
 .burger {
 	display: inline-block;
-	width: $burger-width;
-	height: $burger-height;
+	width: $burger-size;
+	height: $burger-size;
 
 	input {
 		display: none;
@@ -28,7 +31,7 @@
 
 	input:checked~label div {
 		&:nth-child(1) {
-			transform: rotate(45deg) translate($burger-translate-x, $burger-translate-y);
+			transform: rotate(45deg) translate($burger-translate, $burger-translate);
 		}
 
 		&:nth-child(2) {
@@ -36,14 +39,14 @@
 		}
 
 		&:nth-child(3) {
-			transform: rotate(-45deg) translate($burger-translate-x, -$burger-translate-y);
+			transform: rotate(-45deg) translate($burger-translate, -$burger-translate);
 		}
 	}
 
 	span {
 		font-size: .75em;
 		color: $burger-color;
-		text-shadow: 0px -1px 2px var(--txt-shadow);
+		text-shadow: 0px -1px 2px $burger-shadow;
 		user-select: none;
 	}
 }

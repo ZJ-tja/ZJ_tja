@@ -9,6 +9,8 @@
   transition: max-height 1s ease-in-out;
 }
 #Nav > menu {
+  display: inline-flex;
+  gap: 0.25em;
   list-style-type: none;
   padding-right: 6vw;
 }
@@ -28,6 +30,7 @@
     overflow-y: scroll;
   }
   #Nav > menu {
+    flex-wrap: wrap;
     padding-left: 6vw;
   }
   #Nav a {
@@ -45,10 +48,7 @@
     max-height: unset;
   }
   #Nav > menu {
-    display: inline-flex;
-    gap: 0.25em;
     padding-left: 0.25em !important;
-    font-size: 1.125rem;
   }
   #Nav li {
     border-top: solid 0.25em var(--bg);

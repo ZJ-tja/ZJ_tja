@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const fastify_1 = __importDefault(require("fastify"));
 const fastify_socket_io_1 = __importDefault(require("fastify-socket.io"));
 const Tree_1 = __importDefault(require("./Module/Tree"));
+const fs_1 = require("fs");
 const server = (0, fastify_1.default)({
     https: process.env.PORT ? null : {
         // LOCALHOST CERTS
@@ -94,9 +95,52 @@ server.get("/*", {
         }
     }
 }, handler);
+const Compiler = {};
+function ReadDirRec(base, dir) {
+    const files = [];
+    for (const file of (0, fs_1.readdirSync)(base + dir)) {
+        const filepath = dir + "/" + file;
+        if (file.includes(".compiler"))
+            files.push(filepath);
+        else if ((0, fs_1.lstatSync)(base + filepath).isDirectory()) {
+            let subfile;
+            for (subfile of ReadDirRec(base, filepath))
+                files.push(subfile);
+        }
+    }
+    return files;
+}
 server.ready().then(() => {
     server.io.on("connection", (client) => {
-        console.log("Connected" + client.id);
+        Compiler[client.id] = {
+            Current: null,
+            Files: {}
+        };
+        client.on("GetPages", (result) => {
+            return result(ReadDirRec("Src/", ""));
+        });
+        client.on("ReadPage", (name, result) => {
+            if (!(0, fs_1.existsSync)("Src/" + name + ".compiler"))
+                return client.emit("Message", "Error", "Compiler.CantFoundPage", [name]);
+            if (name in Compiler[client.id].Files)
+                return result({ Current: Compiler[client.id].Current = name });
+            Compiler[client.id].Files[name] = JSON.parse((0, fs_1.readFileSync)("Src/" + name + ".compiler", "utf-8"));
+            return result({ Current: name, File: Compiler[client.id].Files[name] });
+        });
+        client.on("CreatePage", (name, result) => {
+            if ((0, fs_1.existsSync)("Src/" + name + ".compiler"))
+                return client.emit("Message", "Error", "Compiler.PageAlreadyExists", [name]);
+            Compiler[client.id].Current = name;
+            Compiler[client.id].Files[name] = {};
+            return result({ Current: name, File: Compiler[client.id].Files[name] });
+        });
+        client.on("disconnecting", () => {
+            if ("Current" in Compiler[client.id]) {
+                for (const [name, file] of Object.entries(Compiler[client.id].Files))
+                    (0, fs_1.writeFileSync)("Src/" + name + ".compiler", JSON.stringify(file));
+                delete Compiler[client.id];
+            }
+        });
     });
 });
 const port = (process.env.PORT || 443);

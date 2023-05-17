@@ -1,6 +1,7 @@
 import fastify, { FastifyReply, FastifyRequest } from "fastify";
 import fastifyIO from "fastify-socket.io";
 import Tree from "./Module/Tree";
+import { readdirSync, lstatSync, existsSync, readFileSync, writeFileSync } from "fs";
 
 const server = fastify( {
 	https: process.env.PORT ? null : {
@@ -94,9 +95,65 @@ server.get( "/*", {
 	}
 }, handler );
 
+const Compiler: any = {};
+
+function ReadDirRec( base: string, dir: string ) {
+	const files:Array<string> = [];
+	for ( const file of readdirSync( base + dir ) ) {
+		const filepath = dir + "/" + file;
+		if ( file.includes( ".compiler" ) )
+			files.push( filepath )
+		else if ( lstatSync( base + filepath ).isDirectory() ) {
+			let subfile: string;
+			for ( subfile of ReadDirRec( base, filepath ) )
+				files.push( subfile );
+		}
+			
+	}
+	return files;
+}
+
 server.ready().then( () => {
-	server.io.on( "connection", ( client ) => {
-		console.log( "Connected" + client.id );
+	server.io.on( "connection", ( client: any ) => {
+		Compiler[ client.id ] = {
+			Current: null,
+			Files: {}
+		};
+
+		client.on ("GetPages", (result:any) => {
+			return result( ReadDirRec( "Src/", "" ) );
+		})
+
+		client.on( "ReadPage", (name: string, result: any ) => {
+			if ( !existsSync( "Src/" + name + ".compiler" ) )
+				return client.emit( "Message", "Error", "Compiler.CantFoundPage", [name] );
+
+			if ( name in Compiler[ client.id ].Files )
+				return result( { Current: Compiler[ client.id ].Current = name } );
+
+			Compiler[ client.id ].Files[ name ] = JSON.parse( readFileSync( "Src/" + name + ".compiler", "utf-8" ) );
+
+			return result( { Current: name, File: Compiler[ client.id ].Files[ name ] } );
+		})
+
+		client.on( "CreatePage", (name: any, result: any) => {
+			if ( existsSync( "Src/" + name + ".compiler" ) )
+				return client.emit( "Message", "Error", "Compiler.PageAlreadyExists", [ name ] );
+			
+			Compiler[ client.id ].Current = name;
+			Compiler[ client.id ].Files[ name ] = {};
+
+			return result( { Current: name, File: Compiler[ client.id ].Files[ name ] } );
+		});
+	
+		client.on( "disconnecting", () => {
+			if( "Current" in Compiler[ client.id] ) {
+				for( const [ name, file ] of Object.entries(Compiler[ client.id ].Files) )
+					writeFileSync( "Src/" + name + ".compiler", JSON.stringify( file ) );
+
+				delete Compiler[ client.id ];
+			}
+		} );
 
 	} );
 } );

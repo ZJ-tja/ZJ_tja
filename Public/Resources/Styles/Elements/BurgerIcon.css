@@ -1,0 +1,39 @@
+.burger {
+  display: inline-block;
+  width: 2.5em;
+  height: 2.5em;
+}
+.burger input {
+  display: none;
+}
+.burger label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3125em;
+  cursor: pointer;
+}
+.burger label div {
+  width: 100%;
+  height: 0.3125em;
+  background-color: var(--active);
+  border-radius: 0.25em;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.burger input:checked ~ label div:nth-child(1) {
+  transform: rotate(45deg) translate(0.440625em, 0.440625em);
+}
+.burger input:checked ~ label div:nth-child(2) {
+  opacity: 0;
+}
+.burger input:checked ~ label div:nth-child(3) {
+  transform: rotate(-45deg) translate(0.440625em, -0.440625em);
+}
+.burger span {
+  font-size: 0.75em;
+  color: var(--active);
+  text-shadow: 0px -1px 2px var(--txt-shadow);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}

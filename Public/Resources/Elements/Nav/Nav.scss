@@ -1,4 +1,13 @@
-@import "../Settings.scss";
+$nav-size-mobile: 960px;
+$nav-left-padding: 6vw;
+$nav-right-padding: 6vw;
+$nav-bg: var(--bg2);
+$nav-txt: var(--txt2);
+$nav-bg2: var(--bg);
+$nav-txt2: var(--txt);
+$nav-active: var(--active);
+$nav-focus: var(--border);
+$nav-spacing: .25em;
 #Nav {
 	grid-area: nav;
 	display: flex;
@@ -10,6 +19,8 @@
 	}
 
 	>menu {
+		display: inline-flex;
+		gap: $nav-spacing;
 		list-style-type: none;
 		padding-right: $nav-right-padding;
 	}
@@ -24,12 +35,14 @@
 		padding: .5em .25em;
 	}
 
-	@media (max-width:calc($SizeM - 1px)) {
+	@media (max-width:calc($nav-size-mobile - 1px)) {
 		background-color: $nav-bg;
 		color: $nav-txt;
 		max-height: 0px;
 		overflow-y: scroll;
+
 		>menu {
+			flex-wrap: wrap;
 			padding-left: $nav-left-padding;
 		}
 
@@ -39,7 +52,7 @@
 			border: solid .125em $nav-txt;
 		}
 	}
-	@media (min-width:$SizeM) {
+	@media (min-width:$nav-size-mobile) {
 		align-items: stretch;
 
 		overflow: hidden;
@@ -48,10 +61,7 @@
 		max-height: unset;
 
 		>menu {
-			display: inline-flex;
-			gap: $nav-spacing;
 			padding-left: $nav-spacing !important;
-			font-size: 1.125rem;
 		}
 
 		li {

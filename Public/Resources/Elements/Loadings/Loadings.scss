@@ -1,0 +1,38 @@
+
+$loadings-bg: #333;
+$loadings-opacity: 0.75;
+$loadings-space: .5em 1em;
+$loadings-loading-bg: #eee;
+$loadings-loading-txt: #333;
+#Loadings {
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+
+	&:has(>div) {
+		width: 100vw;
+		height: 100vh;
+		background-color: $loadings-bg;
+		opacity: $loadings-opacity;
+	}
+
+	>span {
+		margin: $loadings-space;
+		width: auto;
+		padding: .5em;
+		box-sizing: border-box;
+		background-color: $loadings-loading-bg;
+		color: $loadings-loading-txt;
+
+		>div {
+			letter-spacing: -1px;
+		}
+
+		>progress {
+			width: 100%;
+		}
+	}
+}
