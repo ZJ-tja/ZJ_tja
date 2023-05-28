@@ -1,13 +1,18 @@
-@import "../../Resources/Styles/Settings.scss";
-@import "../../Resources/Styles/Colors/Colors.scss";
-@import "../../Resources/Styles/Colors/plt1.scss";
-@import "../../Resources/Styles/Colors/plt2.scss";
-@import "../../Resources/Styles/Colors/plt3.scss";
-@import "../../Resources/Styles/Fonts/f-alexandria.scss";
-@import "../../Resources/Styles/Fonts/f-shojumaru.scss";
-@import "../../Resources/Styles/Elements/Default.scss";
-@import "../../Resources/Styles/Elements/Scrollbar.scss";
-@import "../../Resources/Styles/Templates/HeaderNavFooterStatic.scss";
+@import "../Resources/Styles/Settings.scss";
+@import "../Resources/Styles/Colors/Colors.scss";
+@import "../Resources/Styles/Colors/plt1.scss";
+@import "../Resources/Styles/Colors/plt2.scss";
+@import "../Resources/Styles/Colors/plt3.scss";
+@import "../Resources/Styles/Fonts/f-alexandria.scss";
+@import "../Resources/Styles/Elements/Default.scss";
+@import "../Resources/Styles/Elements/Scrollbar.scss";
+@import "../Resources/Styles/Templates/HeaderNavFooterStatic.scss";
+@import "../Templelements/Messages/Messages.scss";
+@import "../Templelements/Loadings/Loadings.scss";
+
+.buttons {
+	display: inline-block;
+}
 
 #Main{
 	display: flex;
@@ -19,5 +24,3 @@
 #View {
 	width:50vw;
 }
-
-@import "../../Resources/Elements/Messages/Messages.scss";

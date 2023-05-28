@@ -73,27 +73,32 @@ server.setNotFoundHandler( ( req: FastifyRequest, res: FastifyReply ) => {
 	res.type( 'text/html' ).send( 'Not Found! ' + req.url );
 } );
 
-function handler( req: FastifyRequest, res: FastifyReply ) {
-	const params = "params" in req ? req.params as object : {};
-	const uri = "*" in params ? params[ "*" ] as string : "";
-	if ( "Finder" in req.routeConfig ) {
-		const FileFinder = req.routeConfig.Finder as Function;
-		const file: object = FileFinder( uri );
-		if ( "type" in file && "buffer" in file )
-			return res.header( "Content-Type", file.type ).send( file.buffer );
-	}
-	res.callNotFound();
-}
+const mime_types: { [ ext: string ]: string } = {
+	".js": "application/javascript",
+	".css": "text/css",
+	".html": "text/html",
+	".png": "image/png",
+	".webp": "image/webp",
+	".svg": "image/svg+xml",
+	".ico": "image/x-icon",
+	".webmanifest": "application/json"
+};
 
-Tree.Cache( "Public", __dirname );
-console.log(Tree.Tree);
-server.get( "/*", {
-	config: {
-		Finder: ( uri: string ) => {
-			return Tree.Find( "Public", uri );
-		}
+server.get( "*", ( req: FastifyRequest, res: FastifyReply ) => {
+	const params = "params" in req ? req.params as object : {};
+	const uri = "*" in params && params[ "*" ] !== "/" ? params[ "*" ] as string : "/index.html";
+	try {
+		const filetype = uri.substring( uri.lastIndexOf( "." ) );
+		const file = readFileSync( "Public" + uri );
+		const type = filetype in mime_types ? mime_types[ filetype ] : "application/octet-stream";
+		console.log(uri);
+		console.log(type);
+		res.type( type );
+		res.header( "Content-Type", type ).send( file );
+	} catch {
+		res.callNotFound();
 	}
-}, handler );
+} );
 
 const Compiler: any = {};
 

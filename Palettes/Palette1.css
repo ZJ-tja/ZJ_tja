@@ -1,0 +1,20 @@
+.Palette1 {
+  --primary:#E0E0E0;
+  --primary-txt:#666970;
+  --secondary-bg:#FFFFFF;
+  --secondary-txt:#3D0FA5;
+  --tetriary-bg:#D0D0D0;
+  --tetriary-txt:#09090A;
+  --active:#0087fe;
+  --border:#E0E0E0;
+  --shadow:#D0D0D0;
+  --shadow-txt:#D0D0D0;
+  --error:#DE2525;
+  --error-txt:#FFFFFF;
+  --warn:#F08A25;
+  --warn-txt:#FFFFFF;
+  --info:#2D62AD;
+  --info-txt:#FFFFFF;
+  --success:#138056;
+  --success-txt:#FFFFFF;
+}

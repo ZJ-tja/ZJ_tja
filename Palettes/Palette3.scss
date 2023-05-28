@@ -1,0 +1,17 @@
+@import "../Settings.scss";
+
+@mixin Palette3 {
+	--bg: #{$MidnightPurple};
+	--txt: #{$White};
+	--bg2: #{$Indigo};
+	--txt2: #{$White};
+	--bg3: #{$CeruleanBlue};
+	--txt3: #{$White};
+	--active: #{$LimeGreen};
+	--border: #{$DarkTeal};
+	--shadow: #{$BlackBean};
+	--txt-shadow: #{$ElectricBlue};	
+}
+.Palette3 {
+	@include Palette3;
+}

@@ -1,0 +1,21 @@
+<span class="burger">
+	<input id="NavBurger" onclick="libs.Nav()" type="checkbox" aria-label="menu">
+	<label for="NavBurger">
+		<div></div>
+		<div></div>
+		<div></div>
+		<span>Menu</span>
+	</label>
+</span>
+
+<nav id="Nav">
+	<menu type="context">
+		<li class="active"><a href="#">#Link</a></li>
+	</menu>
+</nav>
+
+<script type="text/javascript">
+	modules.Templelements.Add(
+		{ uri: "/Libs/Nav.js", type: "libs" },
+	);
+</script>

@@ -1,7 +1,6 @@
 "use strict";
-var modules = window; //TS-debug
-modules["IO"] = modules["io"]("", { transports: ['websocket'] });
-modules["IO"].on("Message", (type, message, params) => {
+modules.IO = libs.io("", { transports: ['websocket'] });
+modules.IO.on("Message", (type, message, params) => {
     for (let i = params.length; i--;)
         message.replace("{" + (i + 1) + "}", params[i]);
     switch (type) {
@@ -20,17 +19,17 @@ modules["IO"].on("Message", (type, message, params) => {
         default: console.log(message);
     }
 });
-modules["Compiler"] = {
+modules.Compiler = {
     GetPages: function () {
-        modules["IO"].emit("GetPages", (pages) => {
+        modules.IO.emit("GetPages", (pages) => {
             console.log(pages);
         });
     },
     GetPage: function (name) {
-        modules["IO"].emit("GetPage", name);
+        modules.IO.emit("GetPage", name);
     },
     CreatePage: function (name) {
-        modules["IO"].emit("CreatePage", name);
+        modules.IO.emit("CreatePage", name);
     },
 };
 window.addEventListener('pageshow', (event) => {

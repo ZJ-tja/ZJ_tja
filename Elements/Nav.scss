@@ -1,0 +1,119 @@
+@import "../Settings.scss"; 
+
+#Header .burger {
+	display: inline-block;
+	width: $HeaderIconSize;
+	height: $HeaderIconSize;
+
+	input {
+		display: none;
+	}
+
+	label {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: $HeaderGap;
+		cursor: pointer;
+	}
+
+	label div {
+		width: 100%;
+		height: $BurgerSpace;
+		background-color: $BurgerColor;
+		border-radius: .25em;
+		transition: transform .3s ease-in-out, opacity .3s ease-in-out;
+
+	}
+
+	input:checked~label div {
+		&:nth-child(1) {
+			transform: rotate(45deg) translate($BurgerTranslate, $BurgerTranslate);
+		}
+
+		&:nth-child(2) {
+			opacity: 0;
+		}
+
+		&:nth-child(3) {
+			transform: rotate(-45deg) translate($BurgerTranslate, -$BurgerTranslate);
+		}
+	}
+
+	span {
+		font-size: .75em;
+		color: $BurgerColor;
+		text-shadow: 0px -1px 2px $BurgerShadowColor;
+		user-select: none;
+	}
+}
+
+#Nav {
+	grid-area: nav;
+	display: flex;
+	justify-content: flex-end;
+	transition: all .5s cubic-bezier(0, 1, 0, 1), overflow .5s cubic-bezier(0, 1, 0, 1);
+	&.open {
+		max-height: 50vh !important;
+		transition: max-height 1s ease-in-out;
+	}
+
+	>menu {
+		display: inline-flex;
+		gap: $NavGap;
+		list-style-type: none;
+		padding-right: $NavRightPadding;
+	}
+
+	li {
+		display: flex;
+	}
+
+	a {
+		text-align: center;
+		width: 100%;
+		padding: .5em .25em;
+	}
+
+	@media (max-width:calc($SizeM - 1px)) {
+		background-color: $NavBg;
+		color: $NavTxt;
+		max-height: 0px;
+		overflow-y: scroll;
+
+		>menu {
+			flex-wrap: wrap;
+			padding-left: $NavLeftPadding;
+		}
+
+		a {
+			margin: .25em;
+			font-size: 1.25rem;
+			border: solid .125em $NavTxt;
+		}
+	}
+	@media (min-width:$SizeM) {
+		align-items: stretch;
+
+		overflow: hidden;
+		background-color: $NavBg2;
+		color: $NavTxt2;
+		max-height: unset;
+
+		>menu {
+			padding-left: $NavGap !important;
+		}
+
+		a {
+			margin: auto;
+			font-size: 1.125rem;
+			transition: .3s background ease-in-out, .3s border-radius ease-in-out, .3s color ease-in-out;
+		}
+
+		.active>a, a:focus, a:hover {
+			background-color: $NavActive;
+			color: $NavBg2;
+			border-radius: 100%;
+		}
+	}
+}

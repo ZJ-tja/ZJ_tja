@@ -7,49 +7,71 @@
 	<meta name="theme-color" content="#F5F5DC" />
 	<meta name="description" content="Opis strony">
 	<title>ZJ_tja</title>
-	<script src="/Libs/socket.io.min.js"></script>
-	<script src="/Libs/Cookies.js"></script><!-- 
-███████  █████  ██    ██ ██  ██████  ██████  ███    ██ 
-██      ██   ██ ██    ██ ██ ██      ██    ██ ████   ██ 
-█████   ███████ ██    ██ ██ ██      ██    ██ ██ ██  ██ 
-██      ██   ██  ██  ██  ██ ██      ██    ██ ██  ██ ██ 
-██      ██   ██   ████   ██  ██████  ██████  ██   ████  -->
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-	<link rel="manifest" href="/site.webmanifest">
-	<link rel="stylesheet" href="/f-shojumaru.css">
-	<link rel="stylesheet" href="/index.css">
-	<script>var exports = {},modules={};</script>
-	<script src="/Resources/Elements/Nav/Nav.js"></script>
-</head>
-<body class="plt1"><div id="Template">
-	<header id="Header">
-		<a href="/" title="Kod świątyni, strona główna" aria-label="Kod świątyni, strona główna">
-			<svg class="brand" viewBox="0 0 680 340" xmlns="http://www.w3.org/2000/svg">
-				<defs>
-					<linearGradient id="Gradient1">
-						<stop style="stop-color:#9e0b0f;" offset="0%" />
-						<stop style="stop-color:#9e0b0f;" offset="45%" />
-						<stop style="stop-color: black; stop-opacity: 0;" offset="50%" />
-						<stop style="stop-color:#0087fe;" offset="55%" />
-						<stop style="stop-color:#0087fe;" offset="100%" />
-					</linearGradient>
-				</defs>
-				<path style="fill:#0087fe"
-					d="M 434 134 L 390 134 L 390 190 L 446 190 L 490 190 L 490 210 L 390 211 L 362 328 L 327 328 C 346 274 350 224 350 211 L 276 211 L 270 190 L 350 190 L 350 130 L 326 126 L 318 104 L 238 86 L 206 6 C 254 54 626 54 674 6 L 642 86 L 562 104 L 554 126 L 530 130 L 530 190 L 610 190 L 604 211 L 530 211 C 530 224 535 274 558 328 L 522 328 L 490 211 L 490 134 L 446 134 L 446 190 L 434 190 L 434 134 Z">
-				</path>
-				<g style="stroke:#0087fe;stroke-width:12px;fill:none;">
-					<ellipse cx="438" cy="237" rx="16" ry="16"></ellipse>
-					<path d="M 386 285 C 422 299 406 269 438 269 C 470 269 454 299 490 285"></path>
-					<path d="M 418 325 L 398 325 C 380 325 380 303 398 303 L 418 303 L 438 313"></path>
-					<path d="M 454 303 L 478 303 C 496 303 496 325 478 325 L 454 325"></path>
-				</g>
 
-				<g style="fill:url(#Gradient1); font-family: Shojumaru; font-size: 140px;">
-					<text x="8" y="185">Zet</text>
-					<text x="8" y="310">Jot</text>
+	<link rel="shortcut icon" href="/Images/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/Images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/Images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/Images/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<style type="text/css">
+		#Loader {
+			position: fixed;
+			z-index: 2147483646;
+			left: 0px;
+			top: 0px;
+
+			max-height: 100vh;
+			overflow: hidden;
+
+			display: inline-flex;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+		#Loader >div {
+			display: inline-block;
+			position: relative;
+			z-index: 2147483647;
+			width: auto;
+			margin: 1em;
+			padding: 1em;
+			box-sizing: border-box;
+			border-radius: .5em;
+			background-color: #555;
+			color: #fff;
+		}
+		#Loader>div>div{
+			font-weight: bold;
+			letter-spacing: -1px;
+		}
+		#Loader>div>progress {
+			display: block;
+			width: 100%;
+		}
+	</style>
+	<script src="/Libs/Templelements.js"></script>
+	<script type="text/javascript">
+		modules.Templelements.Add(
+			{ uri: "/Styles/Templelements.css", type: "style" },
+			{ uri: "/Fonts/f-black-ops-one.css", type: "style" },
+			{ uri: "/Fonts/f-alexandria.css", type: "style" },
+			{ uri: "/Libs/socket.io.min.js", type: "lib" },
+			{ uri: "/Libs/Cookies.js", type: "lib" },
+			{ uri: "/Libs/LinkHandler.js", type: "lib" },
+			{ uri: "/Libs/Nav.js", type: "lib" },
+		);
+	</script>
+</head>
+<body>
+<div id="Loader"></div>
+<div id="Templelements">
+	<header id="Header">
+		<a class="brand" href="/" title="Kod świątyni, strona główna" aria-label="Kod świątyni, strona główna">
+			<svg viewBox="0 0 64 64" width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+				<rect rx="4" ry="4" style="fill:#0088ff;" height="64" width="64"></rect>
+				<g style="font-family:'Black Ops One',cursive;font-size:32px;text-anchor:middle; fill:#fff">
+					<text x="32" y="28">Zet</text>
+					<text x="32" y="56">Jot</text>
 				</g>
 			</svg>
 		</a>
@@ -64,8 +86,8 @@
 				</label>
 			</span> -->
 			<span class="burger">
-				<input id="ContextBurger" onclick="Nav()" type="checkbox" aria-label="menu">
-				<label for="ContextBurger">
+				<input id="NavBurger" onclick="libs.Nav()" type="checkbox" aria-label="menu">
+				<label for="NavBurger">
 					<div></div>
 					<div></div>
 					<div></div>
@@ -74,7 +96,7 @@
 			</span>
 		</span>
 	</header>
-	<nav id="Nav" class="f-alexandria">
+	<nav id="Nav">
 		<menu type="context">
 			<li class="active"><a href="/">Start</a></li>
 			<li><a href="/Projects/">Projekty</a></li>
@@ -84,16 +106,22 @@
 	</nav>
 	<main id="Main">
 		<div id="Context">
-			<div class="author">
+			<div class="HeroBanner">
 				<div class="plt2">
 					<h1>Jestem ZetJot</h1>
 					<hr>
 					<p>I jestem freelancerem</p>
+					<p>Zobacz więcej</p>
 					<br>
 					<a href="#more">Więcej</a>
 				</div>
-				<img src="/Images/ZetJot.webp" alt="ZetJot Photo">
+				<img id="HeroBanner" alt="ZetJot Photo">
 			</div>
+			<script type="text/javascript">
+				modules.Templelements.Add(
+					{ uri: "/Images/HeroBanner.webp", type: "img", target: "HeroBanner" }
+				);
+			</script>
 			<article class="pd" id="more">
 				<p>
 					Witaj na mojej stronie internetowej! Jestem freelancerem specjalizującym się w tworzeniu profesjonalnych stron internetowych, aplikacji przeglądarkowych i landingpage'ów dla klientów z różnych branż. Oferuję spersonalizowane rozwiązania, które pomogą Ci osiągnąć Twoje cele biznesowe.
@@ -148,12 +176,12 @@
 				</span>
 				<iframe title="OpenStreetMap" class="fit" scrolling="no" src="https://www.openstreetmap.org/export/embed.html?bbox=20.90234756469727%2C52.19792772848456%2C21.093921661376953%2C52.263009573870534&amp;layer=mapnik&amp;marker=52.23048057737069%2C20.99813461303711"></iframe>
 			</span>
-			<div class="plt3 summary">
+			<section class="plt3 summary">
 				<h3>Mapa strony</h3>
 				<ul>
 					<li><a href="/">Start</a></li>
 				</ul>
-			</div>
+			</section>
 		</div>
 	</main>
 	<footer id="Footer">
@@ -164,22 +192,11 @@
 		</span>
 		<span>
 			<span id="LightSwitch">
-				<input type="checkbox" id="LightSwitchInput" onchange="window.LightSwitch(this.checked)" role="button">
+				<input type="checkbox" id="LightSwitchInput" onchange="modules.LightSwitch(this.checked)" role="button">
 				<label for="LightSwitchInput">
 					<span></span>
 				</label>
 			</span>
-			<script>
-				window.LightSwitch = function( night ) {
-					if ( night ) {
-						document.body.classList.add( "night" );
-						Cookies.Set( "night", "1" );
-					} else {
-						document.body.classList.remove( "night" );
-						Cookies.Remove( "night" );
-					}
-				}
-			</script>
 		</span>
 		<!-- <span>
 			<span class="drop-up-right">
@@ -257,6 +274,12 @@
 		</span>! -->
 	</footer>
 </div>
-<script src="/index.js"></script>
+<div id="Notifications"></div>
+<script type="text/javascript">
+	modules.Templelements.Add(
+		{ uri: "/Modules/Notifications.css", type: "style" },
+		{ uri: "/Modules/Notifications.js", type: "module" },
+	);
+</script>
 </body>
 </html>

@@ -1,0 +1,16 @@
+@import "../Settings.scss";
+
+#Footer {
+	grid-area: footer;
+
+	background-color:$FooterBg;
+	color:$FooterTxt;
+
+	>:first-child {
+		padding-left: $TemplateLeftPadding;
+	}
+
+	>:last-child {
+		padding-right: $TemplateRightPadding;
+	}
+}

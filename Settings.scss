@@ -1,0 +1,126 @@
+@use "sass:math";
+$White: #FFFFFF;
+$Beige: #F5F5DC; //kremowy/delikatny/uspokajający
+$Gallery: #EAEAEA; //jasnoszary/neutralny/spokojny
+$Silver: #E0E0E0; //srebrny/neutralny/bezpieczny
+$LightGrey: #D0D0D0; //jasnoszary/bezbarwny/minimalistyczny
+$MistyGrey: #ABB7B7; //szary/delikatny/łagodny
+$SlateGrey: #666970; //Granatowy/mroczny/tajemniczy
+$EerieBlack: #242320; //czarny/ciemny/twardy
+$JetBlack: #212121; //czarny/ponury/pesymistyczny
+$BlackLeather: #1E1F20; //czarny/głeboki/tajemniczy
+$BlackBean: #09090A; //czarny/matowy/minimalistyczny
+$Bloody: #9e0b0f; //krwisty/tajemniczy/życiowy
+$OrangeRed: #FF3333; //czerwony/intensywny/agresywny
+$Rust: #B36200; //kasztanowy/ciepły/ziemienny
+$FireEngineRed: #DE2525; //intensywy/czerwony/energiczny 
+$OrangePeel: #FB8500; //pomarańczowy/wesoły/energiczny
+$Orange: #FF9B30; //pomarańczowy/świeży/żywiołowy
+$Gold: #E8CB3A; //złoty/błyszczący/ekskluzywny
+$PumpkinOrange: #F08A25; //ciepły/pomarańczowy/żywy
+$Sunglow: #FFCF4D; //żółty/jasny/optymistyczny
+$WheatBeige: #DDD4B3; //Beżowy/naturalny/uspokajający
+$Lemon: #FFF340; //słoneczny/jasny/radosny
+$LemonYellow: #FFFC7F; //żółty/radosny/optymistyczny
+$LimeGreen: #00FF00; //zielony/świeży/uzdrowiskowy
+$SpringGreen: #00FF7F; //świeży/jasnozielony/ożywczy
+$YellowGreen: #9ACD32; //naturalny/żółtozielony/wiosenny/
+$ForestGreen: #228B22; //tropikalny/zielony/relaksujący
+$DarkGreen: #006400; //siła/ciemnozielony/ziemiański
+$DarkOliveGreen: #806826; //szmaragdowy/intensywny/luksusowy
+$Olive: #556B2F; //Naturalny/szorstki/ziemiański
+$OliveGreen: #138056; //Harmonijny/zielono-brązowy/zrównoważony
+$Hope: #0087fe; //Energia/Błękitny/Ożywczy
+$ElectricBlue: #19C6FF; //żywy/błękitny/optymistyczny
+$Lilac: #A56AF5; //kreatywny/fioletowy/inspirujący
+$CornflowerBlue: #6495ED; //spokojny/fioletowy/relaksujący
+$DeepSkyBlue: #008CBA; //dynamiczny/morski/energetyczny
+$BlueSapphire: #006BC8; //intensywny/błękitny/porywający
+$CeruleanBlue: #0B4ADB; //świeży/niebieski/ożywczy
+$NavyBlue: #0071C5; //zdecydowany/błękitny/odpowiedzialny
+$ElectricPurple: #5F10F5; //intensywny/fuksjowy/elektryzujący
+$RoyalBlue: #2D62AD; //Morski/niebieski/spokojny
+$Indigo: #3D0FA5; //elegancki/granatowy/wspaniały
+$Magic: #4b0082; //magiczny/ezoteryczny/duchowy
+$DarkTeal: #00526E; //tajemniczy/morski/spokojny
+$MidnightPurple: #110038; //mroczny/ciemno-fioletowy/tajemniczy
+
+$SizeXS: 320px;
+$SizeS: $SizeXS*2; //640px
+$SizeM: $SizeXS*3; //960px
+$SizeL: $SizeXS*4; //1280px
+$SizeXL: $SizeXS*5; //1600px
+
+$ScrollbarSize: 6px;
+$ScrollbarBg: var(--shadow);
+$ScrollbarThumb: var(--active);
+
+$PaddingXS: .25em;
+$PaddingS: $PaddingXS*2; //.5em
+$PaddingM: $PaddingXS*4; //1em
+$PaddingL: $PaddingXS*6; //1.5em
+$PaddingXL: $PaddingXS*8; //2em
+
+$BorderRadiusXS: .25em;
+$BorderRadiusS: $BorderRadiusXS*2; //.5em
+$BorderRadiusM: $BorderRadiusXS*4; //1em
+$BorderRadiusL: $BorderRadiusXS*6; //1.5em
+$BorderRadiusXL: $BorderRadiusXS*8; //2em
+
+$GapXS: .25em;
+$GapS: $GapXS*2; //.5em
+$GapM: $GapXS*4; //1em
+$GapL: $GapXS*6; //1.5em
+$GapXL: $GapXS*8; //2em
+
+$TemplateRightPadding: 6vw;
+$TemplateLeftPadding: 6vw;
+$TemplateIconSize: 2.5em;
+$TemplateFontSize: math.div(100vw, 80);
+
+$HeaderBg: var(--primary-bg);
+$HeaderTxt: var(--primary-txt);
+$HeaderIconSize: $TemplateIconSize;
+$HeaderLeftPadding: $TemplateLeftPadding;
+$HeaderRightPadding: $TemplateRightPadding;
+$HeaderGap: $GapXS;
+
+$NavBg: var(--primary-bg);
+$NavTxt: var(--primary-txt);
+$NavBg2: var(--secondary-bg);
+$NavTxt2: var(--secondary-txt);
+$NavActive: var(--active);
+$NavLeftPadding: $TemplateLeftPadding;
+$NavRightPadding: $TemplateRightPadding;
+$NavGap:$GapXS;
+
+$MainBg: var(--secondary-bg);
+$MainTxt: var(--secondary-txt);
+$MainInnerShadow: var(--primary-bg);
+
+$FooterBg: var(--primary-bg);
+$FooterTxt: var(--primary-txt);
+
+$AccountBorderColor: var(--border);
+$AccountShadowColor: var(--shadow);
+
+$BurgerColor: var(--active);
+$BurgerShadowColor: var(--shadow);
+$BurgerSpace: calc($TemplateIconSize / 8);
+$BurgerTranslate: calc($BurgerSpace * 1.41);
+
+$HeroBannerTxt: var(--txt);
+$HeroBannerLink: var(--txt);
+$HeroBannerLinkBorder: var(--border);
+$HeroBannerLinkActive: var(--active); 
+
+$NotificationGap: 2vh;
+$NotificationIconSize: 2em;
+$NotificationErrorBg: var(--error);
+$NotificationErrorTxt: var(--error-txt);
+$NotificationWarnBg: var(--warn);
+$NotificationWarnTxt: var(--warn-txt);
+$NotificationInfoBg: var(--info);
+$NotificationInfoTxt: var(--info-txt);
+$NotificationSuccessBg: var(--success);
+$NotificationSuccessTxt: var(--success-txt);

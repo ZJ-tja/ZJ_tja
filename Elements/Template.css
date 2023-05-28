@@ -1,0 +1,17 @@
+#Templelements {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  grid-template-areas: "header" "nav" "main" "footer";
+  grid-template-rows: min-content min-content auto min-content;
+  font-family: Source Sans Pro, Helvetica Neue, sans-serif;
+  font-size: 1.25vw;
+}
+@media (min-width: 960px) {
+  #Templelements {
+    grid-template-areas: "header nav" "main main" "footer footer";
+    grid-template-rows: min-content auto min-content;
+    grid-template-columns: auto min-content;
+  }
+}

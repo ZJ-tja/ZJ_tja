@@ -1,0 +1,103 @@
+#Header .burger {
+  display: inline-block;
+  width: 2.5em;
+  height: 2.5em;
+}
+#Header .burger input {
+  display: none;
+}
+#Header .burger label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25em;
+  cursor: pointer;
+}
+#Header .burger label div {
+  width: 100%;
+  height: 0.3125em;
+  background-color: var(--active);
+  border-radius: 0.25em;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+#Header .burger input:checked ~ label div:nth-child(1) {
+  transform: rotate(45deg) translate(0.440625em, 0.440625em);
+}
+#Header .burger input:checked ~ label div:nth-child(2) {
+  opacity: 0;
+}
+#Header .burger input:checked ~ label div:nth-child(3) {
+  transform: rotate(-45deg) translate(0.440625em, -0.440625em);
+}
+#Header .burger span {
+  font-size: 0.75em;
+  color: var(--active);
+  text-shadow: 0px -1px 2px var(--shadow);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+#Nav {
+  grid-area: nav;
+  display: flex;
+  justify-content: flex-end;
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1), overflow 0.5s cubic-bezier(0, 1, 0, 1);
+}
+#Nav.open {
+  max-height: 50vh !important;
+  transition: max-height 1s ease-in-out;
+}
+#Nav > menu {
+  display: inline-flex;
+  gap: 0.25em;
+  list-style-type: none;
+  padding-right: 6vw;
+}
+#Nav li {
+  display: flex;
+}
+#Nav a {
+  text-align: center;
+  width: 100%;
+  padding: 0.5em 0.25em;
+}
+@media (max-width: 959px) {
+  #Nav {
+    background-color: var(--primary-bg);
+    color: var(--primary-txt);
+    max-height: 0px;
+    overflow-y: scroll;
+  }
+  #Nav > menu {
+    flex-wrap: wrap;
+    padding-left: 6vw;
+  }
+  #Nav a {
+    margin: 0.25em;
+    font-size: 1.25rem;
+    border: solid 0.125em var(--primary-txt);
+  }
+}
+@media (min-width: 960px) {
+  #Nav {
+    align-items: stretch;
+    overflow: hidden;
+    background-color: var(--secondary-bg);
+    color: var(--secondary-txt);
+    max-height: unset;
+  }
+  #Nav > menu {
+    padding-left: 0.25em !important;
+  }
+  #Nav a {
+    margin: auto;
+    font-size: 1.125rem;
+    transition: 0.3s background ease-in-out, 0.3s border-radius ease-in-out, 0.3s color ease-in-out;
+  }
+  #Nav .active > a, #Nav a:focus, #Nav a:hover {
+    background-color: var(--active);
+    color: var(--secondary-bg);
+    border-radius: 100%;
+  }
+}

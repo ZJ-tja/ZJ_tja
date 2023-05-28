@@ -5,7 +5,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const fastify_1 = __importDefault(require("fastify"));
 const fastify_socket_io_1 = __importDefault(require("fastify-socket.io"));
-const Tree_1 = __importDefault(require("./Module/Tree"));
 const fs_1 = require("fs");
 const server = (0, fastify_1.default)({
     https: process.env.PORT ? null : {
@@ -75,26 +74,32 @@ server.setNotFoundHandler((req, res) => {
     res.statusCode = 404;
     res.type('text/html').send('Not Found! ' + req.url);
 });
-function handler(req, res) {
+const mime_types = {
+    ".js": "application/javascript",
+    ".css": "text/css",
+    ".html": "text/html",
+    ".png": "image/png",
+    ".webp": "image/webp",
+    ".svg": "image/svg+xml",
+    ".ico": "image/x-icon",
+    ".webmanifest": "application/json"
+};
+server.get("*", (req, res) => {
     const params = "params" in req ? req.params : {};
-    const uri = "*" in params ? params["*"] : "";
-    if ("Finder" in req.routeConfig) {
-        const FileFinder = req.routeConfig.Finder;
-        const file = FileFinder(uri);
-        if ("type" in file && "buffer" in file)
-            return res.header("Content-Type", file.type).send(file.buffer);
+    const uri = "*" in params && params["*"] !== "/" ? params["*"] : "/index.html";
+    try {
+        const filetype = uri.substring(uri.lastIndexOf("."));
+        const file = (0, fs_1.readFileSync)("Public" + uri);
+        const type = filetype in mime_types ? mime_types[filetype] : "application/octet-stream";
+        console.log(uri);
+        console.log(type);
+        res.type(type);
+        res.header("Content-Type", type).send(file);
     }
-    res.callNotFound();
-}
-Tree_1.default.Cache("Public", __dirname);
-console.log(Tree_1.default.Tree);
-server.get("/*", {
-    config: {
-        Finder: (uri) => {
-            return Tree_1.default.Find("Public", uri);
-        }
+    catch (_a) {
+        res.callNotFound();
     }
-}, handler);
+});
 const Compiler = {};
 function ReadDirRec(base, dir) {
     const files = [];

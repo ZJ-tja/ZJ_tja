@@ -1,0 +1,15 @@
+@import "../Settings.scss";
+
+@mixin Palette2 {
+	--bg: #{$SlateGrey};
+	--txt: #{$White};
+	--bg2: #{$Bloody};
+	--txt2: #{$Gold};
+	--active: #{$LemonYellow};
+	--border: #{$White};
+	--shadow: #{$SlateGrey};
+	--txt-shadow: #{$SlateGrey};
+}
+.Palette2 {
+	@include Palette2;
+}

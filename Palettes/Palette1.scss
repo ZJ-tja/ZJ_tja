@@ -1,0 +1,26 @@
+@import "../Settings.scss";
+@mixin Palette1 {
+	--primary:#{$Silver};
+	--primary-txt:#{$SlateGrey};
+	--secondary-bg:#{$White};
+	--secondary-txt:#{$Indigo};
+	--tetriary-bg:#{$LightGrey};
+	--tetriary-txt:#{$BlackBean};
+	--active:#{$Hope};
+	--border:#{$Silver};
+
+	--shadow:#{$LightGrey};
+	--shadow-txt:#{$LightGrey};
+
+	--error:#{$FireEngineRed};
+	--error-txt:#{$White};
+	--warn:#{$PumpkinOrange};
+	--warn-txt:#{$White};
+	--info:#{$RoyalBlue};
+	--info-txt:#{$White};
+	--success:#{$OliveGreen};
+	--success-txt:#{$White};
+}
+.Palette1 {
+	@include Palette1;
+}

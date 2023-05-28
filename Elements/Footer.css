@@ -1,0 +1,11 @@
+#Footer {
+  grid-area: footer;
+  background-color: var(--primary-bg);
+  color: var(--primary-txt);
+}
+#Footer > :first-child {
+  padding-left: 6vw;
+}
+#Footer > :last-child {
+  padding-right: 6vw;
+}

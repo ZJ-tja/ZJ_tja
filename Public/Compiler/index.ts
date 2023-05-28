@@ -1,7 +1,6 @@
-var modules: { [ key: string ]: any } = window;//TS-debug
-modules[ "IO" ] = modules[ "io" ]( "", { transports: [ 'websocket' ] } );
+modules.IO = libs.io( "", { transports: [ 'websocket' ] } );
 
-modules[ "IO" ].on( "Message", ( type:any, message: any, params: any ) => {
+modules.IO.on( "Message", ( type:any, message: any, params: any ) => {
 	for( let i = params.length; i--; )
 		message.replace( "{" + ( i + 1 ) + "}", params[ i ] );
 
@@ -14,17 +13,17 @@ modules[ "IO" ].on( "Message", ( type:any, message: any, params: any ) => {
 	}
 });
 
-modules[ "Compiler" ] = {
+modules.Compiler = {
 	GetPages: function() {
-		modules[ "IO" ].emit( "GetPages", ( pages: any ) => {
+		modules.IO.emit( "GetPages", ( pages: any ) => {
 			console.log(pages)
 		} );
 	},
 	GetPage: function( name : string ) {
-		modules[ "IO" ].emit( "GetPage", name );
+		modules.IO.emit( "GetPage", name );
 	},
 	CreatePage: function( name : string ) {
-		modules[ "IO" ].emit( "CreatePage", name );
+		modules.IO.emit( "CreatePage", name );
 	},
 }
 

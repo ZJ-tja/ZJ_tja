@@ -1,0 +1,18 @@
+<svg class="brand" viewBox="0 0 476 334" xmlns="http://www.w3.org/2000/svg">
+	<defs>
+		<linearGradient id="Gradient1">
+			<stop style="stop-color:#9e0b0f;" offset="0%" />
+			<stop style="stop-color:#9e0b0f;" offset="25%" />
+			<stop style="stop-color: black; stop-opacity: 0;" offset="50%" />
+			<stop style="stop-color:#0087fe;" offset="75%" />
+			<stop style="stop-color:#0087fe;" offset="100%" />
+		</linearGradient>
+	</defs>
+	<path style="fill:url(#Gradient1)" d="M 232 132 L 188 132 L 188 188 L 244 188 L 288 188 L 288 208 L 188 209 L 160 326 L 125 326 C 144 272 148 222 148 209 L 74 209 L 68 188 L 148 188 L 148 128 L 124 124 L 116 102 L 36 84 L 4 4 C 52 52 424 52 472 4 L 440 84 L 360 102 L 352 124 L 328 128 L 328 188 L 408 188 L 402 209 L 328 209 C 328 222 333 272 356 326 L 320 326 L 288 209 L 288 132 L 244 132 L 244 188 L 232 188 L 232 132 Z"></path>
+	<g style="stroke:#0087fe;stroke-width:12px;fill:none;">
+		<ellipse cx="238" cy="235" rx="16" ry="16"></ellipse>
+		<path d="M 186 283 C 222 297 206 267 238 267 C 270 267 254 297 290 283"></path>
+		<path d="M 218 323 L 198 323 C 180 323 180 301 198 301 L 218 301 L 238 311"></path>
+		<path d="M 254 301 L 278 301 C 296 301 296 323 278 323 L 254 323"></path>
+	</g>
+</svg>
