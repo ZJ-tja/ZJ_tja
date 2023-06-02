@@ -60,6 +60,7 @@ Z96ky2Tpgli5UylFicaQ3j6nzRcd9C4y4klT65lpBFZ4vKCjHYQ4Z6hhPD3GG7IV
 	}
 } );
 
+
 server.register( fastifyIO, {
 	transports: [ 'websocket' ],
 	serveClient: false,
